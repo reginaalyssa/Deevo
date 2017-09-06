@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="886965a9-f7f2-4043-85d1-51c7f92608e4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/deevo/deevo/forms.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/deevo/deevo/views.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/deevo/templates/account/profile.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/deevo/templates/registration/signup.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/deevo/templates/flatpages/default.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/db.sqlite3" afterPath="$PROJECT_DIR$/deevo/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/deevo/settings.py" afterPath="$PROJECT_DIR$/deevo/deevo/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/deevo/urls.py" afterPath="$PROJECT_DIR$/deevo/deevo/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/templates/about.html" afterPath="$PROJECT_DIR$/deevo/templates/about.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/templates/base.html" afterPath="$PROJECT_DIR$/deevo/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/templates/home.html" afterPath="$PROJECT_DIR$/deevo/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/templates/registration/login.html" afterPath="$PROJECT_DIR$/deevo/templates/registration/login.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,39 +40,46 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deevo/deevo/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+            <state relative-caret-position="51">
+              <caret line="3" column="60" lean-forward="false" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
+              <folding>
+                <element signature="e#639#671#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/deevo/deevo/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deevo/templates/account/profile.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="33" lean-forward="false" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deevo/templates/home.html">
+      <file leaf-file-name="signup.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deevo/templates/registration/signup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/deevo/templates/about.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="49" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deevo/templates/flatpages/default.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="306">
+              <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="19" selection-end-column="42" />
+              <folding>
+                <element signature="e#291#310#0#HTML" expanded="true" />
+                <element signature="e#419#437#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,18 +87,30 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deevo/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+            <state relative-caret-position="340">
+              <caret line="20" column="54" lean-forward="false" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deevo/templates/registration/login.html">
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deevo/deevo/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="14" />
+            <state relative-caret-position="170">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deevo/templates/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="31" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -107,15 +133,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/deevo/templates/admin/base_site.html" />
-        <option value="$PROJECT_DIR$/deevo/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/deevo/templates/registration/base.html" />
-        <option value="$PROJECT_DIR$/deevo/templates/flatpages/default.html" />
-        <option value="$PROJECT_DIR$/deevo/templates/base.html" />
+        <option value="$PROJECT_DIR$/deevo/deevo/settings.py" />
+        <option value="$PROJECT_DIR$/deevo/deevo/settings.py" />
+        <option value="$PROJECT_DIR$/deevo/templates/registration/signup.html" />
         <option value="$PROJECT_DIR$/deevo/templates/about.html" />
+        <option value="$PROJECT_DIR$/deevo/templates/flatpages/default.html" />
+        <option value="$PROJECT_DIR$/deevo/templates/registration/login.html" />
+        <option value="$PROJECT_DIR$/deevo/templates/base.html" />
         <option value="$PROJECT_DIR$/deevo/templates/home.html" />
-        <option value="$PROJECT_DIR$/deevo/deevo/settings.py" />
-        <option value="$PROJECT_DIR$/deevo/deevo/settings.py" />
+        <option value="$PROJECT_DIR$/deevo/deevo/forms.py" />
+        <option value="$PROJECT_DIR$/deevo/templates/profile.html" />
         <option value="$PROJECT_DIR$/deevo/deevo/urls.py" />
+        <option value="$PROJECT_DIR$/deevo/deevo/views.py" />
       </list>
     </option>
   </component>
@@ -125,11 +155,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-121" />
-    <option name="y" value="-24" />
-    <option name="width" value="1378" />
-    <option name="height" value="744" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="676" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -176,7 +205,7 @@
               <item name="deevo" type="462c0819:PsiDirectoryNode" />
               <item name="deevo" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="flatpages" type="462c0819:PsiDirectoryNode" />
+              <item name="account" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="deevo" type="b2602c69:ProjectViewProjectNode" />
@@ -194,8 +223,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/djangoapp" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.templateLanguages.PyTemplateLanguageModulesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\reginaalyssa\Documents\GitHub\deevo\deevo\templates\account" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -248,10 +282,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12371889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12371889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -295,7 +328,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="43" lean-forward="false" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="e#639#671#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -343,7 +378,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="e#639#671#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -375,7 +412,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#639#671#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -399,14 +438,6 @@
     <entry file="file://$PROJECT_DIR$/Deevo/settings.py" />
     <entry file="file://$PROJECT_DIR$/Deevo/urls.py" />
     <entry file="file://$PROJECT_DIR$/deevo/templates/registration/base.html" />
-    <entry file="file://$PROJECT_DIR$/deevo/templates/flatpages/default.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deevo/templates/admin/base_site.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -417,17 +448,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/deevo/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="14" />
+        <state relative-caret-position="187">
+          <caret line="11" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deevo/templates/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deevo/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="54" lean-forward="false" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/deevo/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        <state relative-caret-position="119">
+          <caret line="7" column="31" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deevo/templates/registration/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="19" selection-end-column="42" />
+          <folding>
+            <element signature="e#291#310#0#HTML" expanded="true" />
+            <element signature="e#419#437#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deevo/deevo/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -439,26 +507,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/deevo/templates/account/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="33" lean-forward="false" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/deevo/deevo/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="51">
+          <caret line="3" column="60" lean-forward="false" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
+          <folding>
+            <element signature="e#639#671#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deevo/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/deevo/deevo/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-          <folding />
+        <state relative-caret-position="459">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deevo/templates/about.html">
+    <entry file="file://$PROJECT_DIR$/deevo/templates/flatpages/default.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="49" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="14" />
+          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
           <folding />
         </state>
       </provider>

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.username }}{% endblock %}
+
+{% block content %}
+
+    <h1>Profile: {{ user.username }}</h1>
+    Username: {{ user.username }}<br />
+    Email: {{ user.email }}<br />
+    Click here to change password.
+{% endblock %}

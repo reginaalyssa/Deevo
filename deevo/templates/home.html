@@ -3,6 +3,14 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-  <h1>Deevo</h1>
-  <p>Welcome to Deevo!</p>
+
+    {% if user.is_authenticated %}
+	    <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
+	{% else %}
+	    <h1>Deevo</h1>
+        <p>Welcome to Deevo!</p>
+
+        <a href="{% url 'signup' %}">Sign up</a>
+        <a href="{% url 'login' %}">Log in</a>
+	{% endif %}
 {% endblock %}
