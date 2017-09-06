@@ -27,5 +27,5 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name="home.html"), name='home'),
     url(r'^about/$', TemplateView.as_view(template_name="about.html")),
     url(r'^signup/$', views.signup, name='signup'),
-    url(r'^profile/(?P<username>[\w.@+-]+)/$', views.view_profile, name='profile'),
+    url(r'^profile/$', views.view_profile, name='profile'),
 ]

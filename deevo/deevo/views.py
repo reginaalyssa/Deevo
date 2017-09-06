@@ -3,7 +3,7 @@ from django.contrib.auth import login, authenticate, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 
 from .forms import SignUpForm
 
@@ -22,6 +22,5 @@ def signup(request):
         return render(request, 'registration/signup.html', {'form': form})
 
 @login_required
-def view_profile(request, username):
-    user = get_object_or_404(User, username=username)
-    return render(request, 'account/profile.html', {'profile_user': user})
+def view_profile(request):
+    return render(request, 'account/profile.html', {'profile_user': request.user})
