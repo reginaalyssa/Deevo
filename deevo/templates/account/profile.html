@@ -7,5 +7,5 @@
     <h1>Profile: {{ user.username }}</h1>
     Username: {{ user.username }}<br />
     Email: {{ user.email }}<br />
-    Click here to change password.
+    <a href="{% url 'change_password' %}">Change password.</a>
 {% endblock %}
