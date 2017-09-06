@@ -1,11 +1,22 @@
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, update_session_auth_hash
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.views import login
 from django.shortcuts import render, redirect
 
 from .forms import SignUpForm
 
+def user_is_not_logged_in(user):
+    return not user.is_authenticated()
+
+def deevo_login(request):
+    if request.user.is_authenticated():
+        return redirect('/')
+    else:
+        return login(request)
+
+@user_passes_test(user_is_not_logged_in, login_url='/')
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -17,7 +28,10 @@ def signup(request):
             login(request, user)
             return redirect('/')
     else:
-        form = SignUpForm()
+        if request.user.is_authenticated():
+            return redirect('/')
+        else:
+            form = SignUpForm()
     return render(request, 'registration/signup.html', {'form': form})
 
 @login_required

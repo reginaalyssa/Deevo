@@ -5,8 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/db.sqlite3" afterPath="$PROJECT_DIR$/deevo/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/deevo/urls.py" afterPath="$PROJECT_DIR$/deevo/deevo/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/deevo/views.py" afterPath="$PROJECT_DIR$/deevo/deevo/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/templates/account/profile.html" afterPath="$PROJECT_DIR$/deevo/templates/account/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/templates/base.html" afterPath="$PROJECT_DIR$/deevo/templates/base.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,8 +31,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deevo/deevo/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="60" lean-forward="false" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="60" />
+            <state relative-caret-position="51">
+              <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
               <folding>
                 <element signature="e#639#671#0" expanded="true" />
               </folding>
@@ -45,9 +43,11 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/deevo/deevo/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="57" lean-forward="true" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
-              <folding />
+            <state relative-caret-position="387">
+              <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,10 +144,10 @@
         <option value="$PROJECT_DIR$/deevo/templates/home.html" />
         <option value="$PROJECT_DIR$/deevo/deevo/forms.py" />
         <option value="$PROJECT_DIR$/deevo/templates/profile.html" />
-        <option value="$PROJECT_DIR$/deevo/deevo/urls.py" />
         <option value="$PROJECT_DIR$/deevo/templates/account/change_password.html" />
         <option value="$PROJECT_DIR$/deevo/templates/account/profile.html" />
         <option value="$PROJECT_DIR$/deevo/templates/base.html" />
+        <option value="$PROJECT_DIR$/deevo/deevo/urls.py" />
         <option value="$PROJECT_DIR$/deevo/deevo/views.py" />
       </list>
     </option>
@@ -537,8 +537,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/deevo/deevo/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="60" lean-forward="false" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="60" />
+        <state relative-caret-position="51">
+          <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
           <folding>
             <element signature="e#639#671#0" expanded="true" />
           </folding>
@@ -547,9 +547,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/deevo/deevo/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="57" lean-forward="true" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
-          <folding />
+        <state relative-caret-position="387">
+          <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
