@@ -4,8 +4,9 @@
 {% block content %}
     <h2>{{ book.n }}</h2>
     <h3>Chapter {{ chapter }}</h3>
+    <h4>{{ version.version }} ({{ version.abbreviation }})</h4>
     {% for verse in verse_list %}
-        <p><a href="{% url 'bible:verse' book.id chapter verse.v %}">{{ verse.v }}</a> {{ verse.t }}</p>
+        <p><a href="{% url 'bible:verse' version_link book.id chapter verse.v %}">{{ verse.v }}</a> {{ verse.t }}</p>
     {% endfor %}
 
 {% endblock %}
