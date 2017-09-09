@@ -26,7 +26,6 @@ class BibleVersionKey(models.Model):
         db_table = 'bible_version_key'
 
 class KeyEnglish(models.Model):
-    b = models.IntegerField()
     n = models.TextField()
 
     class Meta:
