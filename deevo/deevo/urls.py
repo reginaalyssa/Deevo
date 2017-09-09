@@ -21,6 +21,7 @@ from django.views.generic.base import TemplateView
 from . import views
 
 urlpatterns = [
+    url(r'^devotions/', include('devotions.urls')),
     url(r'^bible/', include('bible.urls')),
     url(r'^login/$', views.deevo_login, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
