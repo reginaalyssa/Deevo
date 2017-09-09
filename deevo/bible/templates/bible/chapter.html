@@ -1,14 +1,11 @@
 {% extends 'base.html' %}
-{% block title %}{{ book.n }} - Chapter {{  }}{% endblock %}
+{% block title %}{{ book.n }}{% endblock %}
 
 {% block content %}
-    <h2>Old Testament</h2>
-    <ul>
-    {% for book in book_list %}
-        <li>{{ book.n }}</li>
-        {% if book.n == 'Malachi' %}
-            </ul><h2>New Testament</h2><ul>
-        {% endif %}
+    <h2>{{ book.n }}</h2>
+    <h3>Chapter {{ chapter }}</h3>
+    {% for verse in verse_list %}
+        <p>{{ verse.v }} {{ verse.t }}</p>
     {% endfor %}
-    </ul>
+
 {% endblock %}
