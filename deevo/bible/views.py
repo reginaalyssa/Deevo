@@ -6,25 +6,27 @@ from django.views import generic
 from .models import *
 from .forms import VersionForm
 
-class BookView(generic.ListView):
-    template_name = 'bible/index.html'
-    model = KeyEnglish
+# class BookView(generic.ListView):
+#     template_name = 'bible/index.html'
+#     model = KeyEnglish
+#
+#     def get_initial(self):
+#         return {'value1': self.kwargs['version_id']}
+#
+#     def get_context_data(self, **kwargs):
+#         context = super(BookView, self).get_context_data(**kwargs)
+#         context['version'] = self.kwargs['version_id']
+#         form = VersionForm(self.request.POST or None, initial={"version": self.kwargs['version_id']})
+#         context['form'] = form
+#         return context
 
-    def get_context_data(self, **kwargs):
-        context = super(BookView, self).get_context_data(**kwargs)
-        context['version'] = self.kwargs['version_id']
-        return context
+def change_version_book(request):
+    if request.method == 'POST':
+        form = VersionForm(request.POST)
 
-class ChapterView(generic.DetailView):
-    template_name = 'bible/chapter.html'
-    model = TBbe
-    context_object_name = 'verse_list'
-
-    def get_queryset(self):
-        """
-        Get all verses in given chapter.
-        """
-        return TBbe.objects.filter(b = book_id, c = chapter_id)
+        if form.is_valid():
+            version = form.cleaned_data['version']
+            return HttpResponseRedirect(reverse('bible:book', args=(version.abbreviation.lower(),)))
 
 def change_version_chapter(request, book_id, chapter_id):
     if request.method == 'POST':
@@ -41,6 +43,17 @@ def change_version_verse(request, book_id, chapter_id, verse_id):
         if form.is_valid():
             version = form.cleaned_data['version']
             return HttpResponseRedirect(reverse('bible:verse', args=(version.abbreviation.lower(), book_id, chapter_id, verse_id,)))
+
+def book(request, version_id):
+    book_list = get_list_or_404(KeyEnglish)
+    version = get_object_or_404(BibleVersionKey, abbreviation=version_id.upper())
+    form = VersionForm(request.POST or None, initial={"version": version.id})
+    context = {
+        'version': version_id,
+        'book_list': book_list,
+        'form': form,
+    }
+    return render(request, 'bible/index.html', context)
 
 def chapter(request, version_id, book_id, chapter_id):
     if version_id == 'asv':
@@ -60,7 +73,6 @@ def chapter(request, version_id, book_id, chapter_id):
     else:
         raise Http404("Bible version does not exist")
     version = get_object_or_404(BibleVersionKey, abbreviation=version_id.upper())
-    version_list = get_list_or_404(BibleVersionKey)
     verse_list = get_list_or_404(model, b=book_id, c=chapter_id)
     book = get_object_or_404(KeyEnglish, pk=book_id)
     form = VersionForm(request.POST or None, initial={"version": version.id})
@@ -68,7 +80,6 @@ def chapter(request, version_id, book_id, chapter_id):
         'version': version,
         'version_link': version_id,
         'verse_list': verse_list,
-        'version_list': version_list,
         'book': book,
         'chapter': chapter_id,
         'form': form,
@@ -94,6 +105,7 @@ def verse(request, version_id, book_id, chapter_id, verse_id):
     form = VersionForm(request.POST or None, initial={"version": version.id})
     context = {
         'version': version,
+        'version_link': version_id,
         'verse': verse,
         'book': book,
         'chapter': chapter_id,

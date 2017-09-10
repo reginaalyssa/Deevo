@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Reflect{% endblock %}
+
+{% block content %}
+    <h1>Reflect (New Devotion)</h1>
+    <p>Your chosen verse: {{ book.n }} {{ chapter }}:{{ verse.v }}</p>
+    <p>{{ verse.t }}</p>
+    <small>{{ version.version }} ({{ version.abbreviation }})</small>
+{% endblock %}
