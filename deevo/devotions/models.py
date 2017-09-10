@@ -4,10 +4,9 @@ from django.contrib.auth.models import User
 from django.db import models
 
 class Devotion(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    verse_start = models.IntegerField()
-    verse_end = models.IntegerField(null=True, blank=True)
+    verse_id = models.IntegerField()
     version_id = models.IntegerField()
     reflection = models.TextField()
     pub_date = models.DateTimeField()

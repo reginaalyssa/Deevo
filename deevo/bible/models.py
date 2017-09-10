@@ -21,12 +21,18 @@ class BibleVersionKey(models.Model):
     copyright = models.TextField()
     copyright_info = models.TextField()
 
+    def __str__(self):
+        return self.version + ' (' + self.abbreviation + ')'
+
     class Meta:
         managed = False
         db_table = 'bible_version_key'
 
 class KeyEnglish(models.Model):
     n = models.TextField()
+
+    def __str__(self):
+        return self.n
 
     class Meta:
         managed = False
@@ -39,6 +45,9 @@ class TAsv(models.Model):
     v = models.IntegerField()
     t = models.TextField()
 
+    def __str__(self):
+        return self.t
+
     class Meta:
         managed = False
         db_table = 't_asv'
@@ -49,6 +58,9 @@ class TBbe(models.Model):
     c = models.IntegerField()
     v = models.IntegerField()
     t = models.TextField()
+
+    def __str__(self):
+        return self.t
 
     class Meta:
         managed = False
@@ -61,6 +73,9 @@ class TDby(models.Model):
     v = models.IntegerField()
     t = models.TextField()
 
+    def __str__(self):
+        return self.t
+
     class Meta:
         managed = False
         db_table = 't_dby'
@@ -71,6 +86,9 @@ class TKjv(models.Model):
     c = models.IntegerField()
     v = models.IntegerField()
     t = models.TextField()
+
+    def __str__(self):
+        return self.t
 
     class Meta:
         managed = False
@@ -83,6 +101,9 @@ class TWbt(models.Model):
     v = models.IntegerField()
     t = models.TextField()
 
+    def __str__(self):
+        return self.t
+
     class Meta:
         managed = False
         db_table = 't_wbt'
@@ -94,6 +115,9 @@ class TWeb(models.Model):
     v = models.IntegerField()
     t = models.TextField()
 
+    def __str__(self):
+        return self.t
+
     class Meta:
         managed = False
         db_table = 't_web'
@@ -104,6 +128,9 @@ class TYlt(models.Model):
     c = models.IntegerField()
     v = models.IntegerField()
     t = models.TextField()
+
+    def __str__(self):
+        return self.t
 
     class Meta:
         managed = False

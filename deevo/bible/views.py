@@ -8,6 +8,11 @@ class BookView(generic.ListView):
     template_name = 'bible/index.html'
     model = KeyEnglish
 
+    def get_context_data(self, **kwargs):
+        context = super(BookView, self).get_context_data(**kwargs)
+        context['version'] = self.kwargs['version_id']
+        return context
+
 class ChapterView(generic.DetailView):
     template_name = 'bible/chapter.html'
     model = TBbe

@@ -5,7 +5,7 @@
     <h2>Old Testament</h2>
     <ul>
     {% for book in object_list %}
-        <li>{{ book.n }}</li>
+        <li><a href="{% url 'bible:chapter' version book.id 1 %}">{{ book.n }}</a></li>
         {% if book.n == 'Malachi' %}
             </ul><h2>New Testament</h2><ul>
         {% endif %}
