@@ -1,8 +1,10 @@
-from django.http import Http404
+from django.core.urlresolvers import reverse
+from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, get_list_or_404, render
 from django.views import generic
 
 from .models import *
+from .forms import VersionForm
 
 class BookView(generic.ListView):
     template_name = 'bible/index.html'
@@ -24,6 +26,14 @@ class ChapterView(generic.DetailView):
         """
         return TBbe.objects.filter(b = book_id, c = chapter_id)
 
+def change_version(request, book_id, chapter_id):
+    if request.method == 'POST':
+        form = VersionForm(request.POST)
+
+        if form.is_valid():
+            version = form.cleaned_data['version']
+            return HttpResponseRedirect(reverse('bible:chapter', args=(version.abbreviation.lower(), book_id, chapter_id,)))
+
 def chapter(request, version_id, book_id, chapter_id):
     if version_id == 'asv':
         model = TAsv
@@ -35,17 +45,25 @@ def chapter(request, version_id, book_id, chapter_id):
         model = TKjv
     elif version_id == 'wbt':
         model = TWbt
+    elif version_id == 'web':
+        model = TWeb
+    elif version_id == 'ylt':
+        model = TYlt
     else:
         raise Http404("Bible version does not exist")
     version = get_object_or_404(BibleVersionKey, abbreviation=version_id.upper())
+    version_list = get_list_or_404(BibleVersionKey)
     verse_list = get_list_or_404(model, b=book_id, c=chapter_id)
     book = get_object_or_404(KeyEnglish, pk=book_id)
+    form = VersionForm(request.POST or None, initial={"version": version.id})
     context = {
         'version': version,
         'version_link': version_id,
         'verse_list': verse_list,
+        'version_list': version_list,
         'book': book,
         'chapter': chapter_id,
+        'form': form,
     }
     return render(request, 'bible/chapter.html', context)
 

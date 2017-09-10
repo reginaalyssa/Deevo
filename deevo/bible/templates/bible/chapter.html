@@ -2,6 +2,12 @@
 {% block title %}{{ book.n }} - Chapter {{ chapter }}{% endblock %}
 
 {% block content %}
+    Change version:
+    <form action="{% url 'bible:change_version' book.id chapter %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit" />
+    </form>
     <h2>{{ book.n }}</h2>
     <h3>Chapter {{ chapter }}</h3>
     <h4>{{ version.version }} ({{ version.abbreviation }})</h4>
