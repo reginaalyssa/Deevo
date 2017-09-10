@@ -3,7 +3,7 @@
 
 {% block content %}
     Change version:
-    <form action="{% url 'bible:change_version' book.id chapter %}" method="post">
+    <form action="{% url 'bible:change_version_chapter' book.id chapter %}" method="post">
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="Submit" />
