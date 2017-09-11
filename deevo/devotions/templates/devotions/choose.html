@@ -28,24 +28,3 @@
     <input type="submit" value="{% trans "submit" %}"/>
     </form>
 {% endblock %}
-
-{#{% extends 'base.html' %}#}
-{#{% block title %}Devotion{% endblock %}#}
-{##}
-{#{% block content %}#}
-{#    <h2>Devotion (Write Reflection)</h2>#}
-{#    1 Choose Verse <br/>#}
-{#    2 Write Reflection <br/>#}
-{#    3 Review <br/>#}
-{##}
-{#    <p>Your chosen verse: {{ book.n }} {{ chapter }}:{{ verse.v }}</p>#}
-{#    <p>{{ verse.t }}</p>#}
-{#    <small>{{ version.version }} ({{ version.abbreviation }})</small>#}
-{##}
-{#    <form action="{% url 'devotions:review' %}" method="post">#}
-{#        {% csrf_token %}#}
-{#        {{ form }}#}
-{#        <input type="submit" value="Submit Devotion" />#}
-{#    </form>#}
-{#{% endblock %}#}
-{##}

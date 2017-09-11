@@ -1,0 +1,19 @@
+{% extends 'devotions/devotions.html' %}
+{% block title %}{{ user.username }}'s Devotions{% endblock %}
+
+{% block content %}
+    <h2>{{ user.username }}'s Devotions</h2>
+    {% if latest_devotion_list %}
+        {% for devotion, verse, book in zipped_data %}
+            <h3>{{ devotion.title }}</h3>
+            <small>{{ devotion.pub_date }}</small>
+            <h4>{{ book.n }} {{ verse.c }}:{{ verse.v }}</h4>
+            <small>{{ verse.t }}</small>
+            <p>{{ devotion.reflection }}</p>
+        {% endfor %}
+        <br />
+    {% else %}
+        <p>You haven't written any devotions yet. Click <a href="{% url 'devotions:new' %}">here</a> to start reflecting.</p>
+    {% endif %}
+
+{% endblock %}
