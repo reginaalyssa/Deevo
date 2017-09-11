@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load tag_library %}
 {% block title %}{{ book.n }} - Chapter {{ chapter }}{% endblock %}
 
 {% block content %}
@@ -12,7 +13,7 @@
     <h3>Chapter {{ chapter }}</h3>
     <h4>{{ version.version }} ({{ version.abbreviation }})</h4>
     {% for verse in verse_list %}
-        <p><a href="{% url 'bible:verse' version_link book.id chapter verse.v %}">{{ verse.v }}</a> {{ verse.t }}</p>
+        <p><a href="{% url 'bible:verse' version_link book.id chapter verse.v %}">{{ verse.v }}</a> {{ verse.t|remove_backslash }}</p>
     {% endfor %}
 
 {% endblock %}

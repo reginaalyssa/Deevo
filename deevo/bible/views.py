@@ -1,7 +1,7 @@
 from django.core.urlresolvers import reverse
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, get_list_or_404, render
-from django.views import generic
+# from django.views import generic
 
 from .models import *
 from .forms import VersionForm
@@ -97,6 +97,10 @@ def verse(request, version_id, book_id, chapter_id, verse_id):
         model = TKjv
     elif version_id == 'wbt':
         model = TWbt
+    elif version_id == 'web':
+        model = TWeb
+    elif version_id == 'ylt':
+        model = TYlt
     else:
         raise Http404("Bible version does not exist")
     version = get_object_or_404(BibleVersionKey, abbreviation=version_id.upper())

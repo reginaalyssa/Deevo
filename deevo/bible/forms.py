@@ -1,4 +1,4 @@
-from bible.models import KeyEnglish, BibleVersionKey, TAsv
+from bible.models import BibleVersionKey
 from django import forms
 
 class VersionForm(forms.Form):
@@ -7,16 +7,3 @@ class VersionForm(forms.Form):
         required=True,
         initial=1
     )
-
-class BookChapterForm(forms.Form):
-    book = forms.ModelChoiceField(
-        queryset=KeyEnglish.objects.all(),
-        required=True,
-        initial=1
-    )
-    chapter = forms.ModelChoiceField(
-        queryset=TAsv.objects.filter(b=1).values_list('c', flat=True).distinct(),
-        required=True,
-        initial=1
-    )
-    verse = forms.ChoiceField()
