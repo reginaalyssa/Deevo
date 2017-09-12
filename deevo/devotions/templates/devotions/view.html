@@ -4,12 +4,18 @@
 {% block content %}
     <h2>{{ user.username }}'s Devotions</h2>
     {% if latest_devotion_list %}
-        {% for devotion, verse, book in zipped_data %}
-            <h3>{{ devotion.title }}</h3>
-            <small>{{ devotion.pub_date }}</small>
-            <h4>{{ book.n }} {{ verse.c }}:{{ verse.v }}</h4>
-            <small>{{ verse.t }}</small>
+        {% for devotion, verse, book, version in zipped_data %}
+            <h3><a href="{% url 'devotions:view_specific' devotion.id %}">{{ devotion.title }}</a></h3>
+            <small>
+                {{ devotion.pub_date }} <br/>
+                {% if devotion.edit_date %}
+                    Last edited on {{ devotion.edit_date }} <br/>
+                {% endif %}
+                {{ book.n }} {{ verse.c }}:{{ verse.v }} ({{ version }}) <br/>
+                {{ verse.t }} <br/>
+            </small>
             <p>{{ devotion.reflection }}</p>
+            <a href="{% url 'devotions:edit' devotion.id %}">Edit</a>
         {% endfor %}
         <br />
     {% else %}

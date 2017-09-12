@@ -1,0 +1,15 @@
+{% extends 'devotions/devotions.html' %}
+{% block title %}Reflect (New Devotion){% endblock %}
+
+{% block content %}
+    <h2>Reflect (New Devotion)</h2>
+    Verse:
+    <small>
+        {{ book.n }} {{ verse.c }}:{{ verse.v }} ({{ version }}) <br/>
+        {{ verse.t }}
+    </small>
+    <form action="" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Post" />
+    </form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'devotions/devotions.html' %}
+{% block title %}View Devotion{% endblock %}
+
+{% block content %}
+    {% if user_id == user.id %}
+        <h2>View Devotions</h2>
+        <h3>{{ devotion.title }}</h3>
+        <small>
+            Published on {{ devotion.pub_date }} <br/>
+            {% if devotion.edit_date %}
+                Last edited on {{ devotion.edit_date }} <br/>
+            {% endif %}
+            {{ book.n }} {{ verse.c }}:{{ verse.v }} ({{ version }}) <br/>
+            {{ verse.t }} <br/>
+        </small>
+        <p>{{ devotion.reflection }}</p>
+        <a href="{% url 'devotions:edit' devotion.id %}">Edit</a>
+    {% else %}
+        <p>You are not authorized to view this page.</p>
+    {% endif %}
+{% endblock %}
