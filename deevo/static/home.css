@@ -1,0 +1,37 @@
+body {
+    background: #020202 url("images/deevo-background.jpg") no-repeat left bottom;
+}
+
+p a, p a:hover {
+    color: #f8fa2a;
+}
+
+h1 {
+    font-family: "Affectionately-Yours", sans-serif;
+    font-size: 5.5em;
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+#know-more {
+    color: white;
+    font-weight: bold;
+    background-color: #39b54a;
+    font-size: smaller;
+    margin-right: 5px;
+}
+
+#get-started {
+    color: #003e08;
+    font-weight: bold;
+    font-size: smaller;
+    margin-left: 5px;
+}
+
+#home-login {
+    font-size: smaller;
+    margin-top: 10px;
+}

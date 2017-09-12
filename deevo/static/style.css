@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Affectionately-Yours';
+    src: url("fonts/Affectionately-Yours.ttf");
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.vertical-center {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.container {
+    height: 100%;
+}
