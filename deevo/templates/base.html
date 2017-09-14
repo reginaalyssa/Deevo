@@ -17,25 +17,25 @@
 </head>
 <body>
 {% block navbar %}
-<nav class="navbar navbar-expand-md navbar-light bg-light navbar-default">
-    <a class="navbar-brand" href="{% url 'home' %}">Deevo</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#deevo-navbar" aria-controls="deevo-navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    {% if user.is_authenticated %}
+        <nav class="navbar navbar-expand-md navbar-light bg-light navbar-default">
+            <a class="navbar-brand" href="{% url 'home' %}">Deevo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#deevo-navbar" aria-controls="deevo-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <div class="collapse navbar-collapse" id="deevo-navbar">
-        <ul class="navbar-nav mr-auto">
-            {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'profile' %}">Profile</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                </li>
-            {% endif %}
-        </ul>
-    </div>
-</nav>
+            <div class="collapse navbar-collapse" id="deevo-navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    {% endif %}
 {% endblock %}
 <div class="container">
     {% block content %}{% endblock %}

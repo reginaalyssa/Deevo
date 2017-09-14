@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
-{% block stylesheet %}
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'home.css' %}">
+{% block title %}
+    {% if user.is_authenticated %}
+        Dashboard
+    {% else %}
+        Home
+    {% endif %}
 {% endblock %}
-{% block navbar %}{% endblock %}
+{% block stylesheet %}
+    {% if user.is_authenticated != True %}
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'home.css' %}">
+    {% endif %}
+{% endblock %}
+
 {% block content %}
     {% if user.is_authenticated %}
 	    <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
