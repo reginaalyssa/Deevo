@@ -1,24 +1,10 @@
 from django.core.urlresolvers import reverse
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, get_list_or_404, render
-# from django.views import generic
+from django.views.generic import ListView
 
 from .models import *
 from .forms import VersionForm
-
-# class BookView(generic.ListView):
-#     template_name = 'bible/index.html'
-#     model = KeyEnglish
-#
-#     def get_initial(self):
-#         return {'value1': self.kwargs['version_id']}
-#
-#     def get_context_data(self, **kwargs):
-#         context = super(BookView, self).get_context_data(**kwargs)
-#         context['version'] = self.kwargs['version_id']
-#         form = VersionForm(self.request.POST or None, initial={"version": self.kwargs['version_id']})
-#         context['form'] = form
-#         return context
 
 def change_version_book(request):
     if request.method == 'POST':
@@ -44,16 +30,38 @@ def change_version_verse(request, book_id, chapter_id, verse_id):
             version = form.cleaned_data['version']
             return HttpResponseRedirect(reverse('bible:verse', args=(version.abbreviation.lower(), book_id, chapter_id, verse_id,)))
 
-def book(request, version_id):
-    book_list = get_list_or_404(KeyEnglish)
-    version = get_object_or_404(BibleVersionKey, abbreviation=version_id.upper())
-    form = VersionForm(request.POST or None, initial={"version": version.id})
-    context = {
-        'version': version_id,
-        'book_list': book_list,
-        'form': form,
-    }
-    return render(request, 'bible/index.html', context)
+class BookListView(ListView):
+    template_name = 'bible/index.html'
+    model = KeyEnglish
+    context_object_name = 'book_list'
+
+    def get_context_data(self, **kwargs):
+        context = super(BookListView, self).get_context_data(**kwargs)
+        version_id = self.kwargs["version_id"]
+        if version_id:
+            version = get_object_or_404(BibleVersionKey, abbreviation=version_id.upper())
+        else:
+            version = get_object_or_404(BibleVersionKey, id=1)
+
+        form = VersionForm(self.request.POST or None, initial={"version": version.id})
+        context['version'] = version_id
+        context['form'] = form
+        print(context)
+        return context
+
+# class BookView(generic.ListView):
+#     template_name = 'bible/index.html'
+#     model = KeyEnglish
+#
+#     def get_initial(self):
+#         return {'value1': self.kwargs['version_id']}
+#
+#     def get_context_data(self, **kwargs):
+#         context = super(BookView, self).get_context_data(**kwargs)
+#         context['version'] = self.kwargs['version_id']
+#         form = VersionForm(self.request.POST or None, initial={"version": self.kwargs['version_id']})
+#         context['form'] = form
+#         return context
 
 def chapter(request, version_id, book_id, chapter_id):
     if version_id == 'asv':
