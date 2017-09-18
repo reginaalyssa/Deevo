@@ -1,0 +1,19 @@
+h1 {
+    font-family: "Affectionately-Yours", sans-serif;
+    font-size: 10em;
+    margin-bottom: 0;
+}
+
+#description {
+    font-size: 1.5em;
+}
+
+.vertical-center {
+    top: 40%;
+}
+
+
+#home {
+    height: 100%;
+    color: white;
+}

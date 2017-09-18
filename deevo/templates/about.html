@@ -2,6 +2,28 @@
 
 {% block title %}About Us{% endblock %}
 
-{% block content %}
-    This is the one page landing site for About Us.
+{% block stylesheet %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block container %}
+    <div id="home" class="container-fluid">
+        <div class="row vertical-center">
+            <div class="col-12 col-lg-12 col-md-12 text-center">
+                <h1>Deevo</h1>
+                <p id="description">
+                    Your personal daily devotion web application.
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script src="{% static "backstretch-images.js" %}"></script>
 {% endblock %}
