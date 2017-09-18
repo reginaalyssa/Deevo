@@ -147,6 +147,7 @@ def reflect(request, version_id, book_id, chapter_id, verse_id):
             return HttpResponseRedirect(reverse('devotions:view_specific', args=(devotion.pk,)))
     else:
         form = ReflectionForm()
+
     model = get_version_model_from_abbr(version_id)
     version = get_object_or_404(BibleVersionKey, abbreviation=version_id.upper())
     verse = get_object_or_404(model, b=book_id, c=chapter_id, v=verse_id)
