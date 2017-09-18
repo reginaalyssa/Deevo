@@ -31,20 +31,40 @@ def change_version_verse(request, book_id, chapter_id, verse_id):
             version = form.cleaned_data['version']
             return HttpResponseRedirect(reverse('bible:verse', args=(version.abbreviation.lower(), book_id, chapter_id, verse_id,)))
 
-def get_version_model_from_id(version_id):
-    if version_id == 'asv':
+def get_version_model_from_abbr(version_abbr):
+    version_abbr = version_abbr.lower()
+    if version_abbr == 'asv':
         model = TAsv
-    elif version_id == 'bbe':
+    elif version_abbr == 'bbe':
         model = TBbe
-    elif version_id == 'darby':
+    elif version_abbr == 'darby':
         model = TDby
-    elif version_id == 'kjv':
+    elif version_abbr == 'kjv':
         model = TKjv
-    elif version_id == 'wbt':
+    elif version_abbr == 'wbt':
         model = TWbt
-    elif version_id == 'web':
+    elif version_abbr == 'web':
         model = TWeb
-    elif version_id == 'ylt':
+    elif version_abbr == 'ylt':
+        model = TYlt
+    else:
+        raise Http404("Bible version does not exist")
+    return model
+
+def get_version_model_from_id(version_id):
+    if version_id == 1:
+        model = TAsv
+    elif version_id == 2:
+        model = TBbe
+    elif version_id == 3:
+        model = TDby
+    elif version_id == 4:
+        model = TKjv
+    elif version_id == 5:
+        model = TWbt
+    elif version_id == 6:
+        model = TWeb
+    elif version_id == 7:
         model = TYlt
     else:
         raise Http404("Bible version does not exist")
@@ -57,7 +77,9 @@ class BookListView(LoginRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super(BookListView, self).get_context_data(**kwargs)
-        version_id = self.kwargs['version_id']
+        version_id = self.kwargs.get('version_id')
+        if not version_id:
+            version_id = 'asv'
         version = get_object_or_404(BibleVersionKey, abbreviation=version_id.upper())
         context['form'] = VersionForm(self.request.POST or None, initial={'version': version.id})
         context['version'] = version_id
@@ -69,7 +91,7 @@ class ChapterListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         version_id = self.kwargs.get('version_id')
-        model = get_version_model_from_id(version_id)
+        model = get_version_model_from_abbr(version_id)
         queryset = get_list_or_404(model, b=self.kwargs.get('book_id'), c=self.kwargs.get('chapter_id'))
         return queryset
 
@@ -89,7 +111,7 @@ class VerseDetailView(LoginRequiredMixin, DetailView):
 
     def get_object(self):
         version_id = self.kwargs.get('version_id')
-        model = get_version_model_from_id(version_id)
+        model = get_version_model_from_abbr(version_id)
         object = get_object_or_404(model, b=self.kwargs.get('book_id'), c=self.kwargs.get('chapter_id'), v=self.kwargs.get('verse_id'))
         return object
 

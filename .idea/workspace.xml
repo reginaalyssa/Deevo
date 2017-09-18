@@ -5,6 +5,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/db.sqlite3" afterPath="$PROJECT_DIR$/deevo/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/bible/urls.py" afterPath="$PROJECT_DIR$/deevo/bible/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/bible/views.py" afterPath="$PROJECT_DIR$/deevo/bible/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/devotions/urls.py" afterPath="$PROJECT_DIR$/deevo/devotions/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/devotions/views.py" afterPath="$PROJECT_DIR$/deevo/devotions/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,8 +33,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deevo/devotions/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="57" />
+            <state relative-caret-position="884">
+              <caret line="52" column="37" lean-forward="false" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
@@ -40,11 +42,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deevo/devotions/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="72" lean-forward="false" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/deevo/bible/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1751">
-              <caret line="103" column="22" lean-forward="false" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
+            <state relative-caret-position="357">
+              <caret line="85" column="22" lean-forward="true" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
@@ -65,8 +77,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deevo/bible/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="133" lean-forward="false" selection-start-line="11" selection-start-column="133" selection-end-line="11" selection-end-column="133" />
+            <state relative-caret-position="170">
+              <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -101,6 +113,9 @@
       <find>book</find>
       <find>book(</find>
       <find>context_object</find>
+      <find>NewDevotionWizard</find>
+      <find>get_version</find>
+      <find>devotion.id</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,9 +154,7 @@
         <option value="$PROJECT_DIR$/deevo/devotions/templates/devotions/edit.html" />
         <option value="$PROJECT_DIR$/deevo/devotions/templates/devotions/view.html" />
         <option value="$PROJECT_DIR$/deevo/bible/templates/bible/verse.html" />
-        <option value="$PROJECT_DIR$/deevo/devotions/urls.py" />
         <option value="$PROJECT_DIR$/deevo/devotions/templates/devotions/reflect_from_verse.html" />
-        <option value="$PROJECT_DIR$/deevo/devotions/views.py" />
         <option value="$PROJECT_DIR$/deevo/devotions/templates/devotions/devotion.html" />
         <option value="$PROJECT_DIR$/deevo/deevo/urls.py" />
         <option value="$PROJECT_DIR$/deevo/deevo/settings.py" />
@@ -155,6 +168,8 @@
         <option value="$PROJECT_DIR$/deevo/templates/base.html" />
         <option value="$PROJECT_DIR$/deevo/templates/home.html" />
         <option value="$PROJECT_DIR$/deevo/bible/templates/bible/index.html" />
+        <option value="$PROJECT_DIR$/deevo/devotions/urls.py" />
+        <option value="$PROJECT_DIR$/deevo/devotions/views.py" />
         <option value="$PROJECT_DIR$/deevo/bible/urls.py" />
         <option value="$PROJECT_DIR$/deevo/bible/views.py" />
       </list>
@@ -484,13 +499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deevo/devotions/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="117" lean-forward="false" selection-start-line="12" selection-start-column="117" selection-end-line="12" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deevo/bible/templates/bible/verse.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -622,16 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deevo/devotions/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deevo/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -640,10 +638,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/deevo/devotions/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="52" column="37" lean-forward="false" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deevo/devotions/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="72" lean-forward="false" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/deevo/bible/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="133" lean-forward="false" selection-start-line="11" selection-start-column="133" selection-end-line="11" selection-end-column="133" />
+        <state relative-caret-position="170">
+          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -652,8 +668,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/deevo/bible/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="103" column="22" lean-forward="false" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
+        <state relative-caret-position="357">
+          <caret line="85" column="22" lean-forward="true" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
           </folding>
