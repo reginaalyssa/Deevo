@@ -26,12 +26,11 @@
 
             <div class="collapse navbar-collapse" id="deevo-navbar">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'bible:book' %}">Bible</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'devotions:new' %}">Reflect (New Devotion)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'devotions:view_devotions' %}">Devotions</a></li>
+                    <li><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
                 </ul>
             </div>
         </nav>
