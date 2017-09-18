@@ -9,5 +9,5 @@ class Devotion(models.Model):
     verse_id = models.IntegerField()
     version_id = models.IntegerField()
     reflection = models.TextField()
-    pub_date = models.DateTimeField()
-    edit_date = models.DateTimeField(null=True, blank=True)
+    pub_date = models.DateTimeField(auto_now_add=True)
+    edit_date = models.DateTimeField(auto_now=True)

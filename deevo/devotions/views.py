@@ -90,11 +90,6 @@ class UpdateDevotionView(LoginRequiredMixin, generic.UpdateView):
     def get_success_url(self):
         return reverse('devotions:view_specific', args=(self.get_object().id,))
 
-    def form_valid(self, form):
-        self.object = form.save()
-        self.object.edit_date = timezone.now()
-        return super(UpdateDevotionView, self).form_valid(form)
-
     def get_context_data(self, **kwargs):
         context = super(UpdateDevotionView, self).get_context_data(**kwargs)
         version_id = self.get_object().version_id
@@ -108,12 +103,12 @@ class UpdateDevotionView(LoginRequiredMixin, generic.UpdateView):
         return context
 
 
-class DevotionView(LoginRequiredMixin, generic.DetailView):
+class DevotionDetailView(LoginRequiredMixin, generic.DetailView):
     model = Devotion
     template_name = 'devotions/devotion.html'
 
     def get_context_data(self, **kwargs):
-        context = super(DevotionView, self).get_context_data(**kwargs)
+        context = super(DevotionDetailView, self).get_context_data(**kwargs)
         version_id = self.get_object().version_id
         model = get_version_model_from_id(version_id)
         verse = get_object_or_404(model, pk=self.get_object().verse_id)

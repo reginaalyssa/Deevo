@@ -7,7 +7,7 @@
         <h3>{{ devotion.title }}</h3>
         <small>
             Published on {{ devotion.pub_date }} <br/>
-            {% if devotion.edit_date %}
+            {% if devotion.edit_date != devotion.pub_date %}
                 Last edited on {{ devotion.edit_date }} <br/>
             {% endif %}
             {{ book.n }} {{ verse.c }}:{{ verse.v }} ({{ version }}) <br/>
