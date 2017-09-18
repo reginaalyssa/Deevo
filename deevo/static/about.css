@@ -1,4 +1,4 @@
-h1 {
+#deevo-title {
     font-family: "Affectionately-Yours", sans-serif;
     font-size: 10em;
     margin-bottom: 0;
@@ -11,7 +11,6 @@ h1 {
 .vertical-center {
     top: 40%;
 }
-
 
 #home {
     height: 100%;

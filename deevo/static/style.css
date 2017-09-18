@@ -20,3 +20,23 @@ body {
 .container {
     height: 100%;
 }
+
+.navbar-brand {
+    font-family: "Affectionately-Yours", sans-serif;
+    font-weight: bold;
+    font-size: 2.5em;
+    color: #353535;
+}
+
+.nav-link {
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #353535;
+}
+
+#main-navbar {
+    background-color: #ffffff;
+    height: 60px;
+}

@@ -13,13 +13,69 @@
     <div id="home" class="container-fluid">
         <div class="row vertical-center">
             <div class="col-12 col-lg-12 col-md-12 text-center">
-                <h1>Deevo</h1>
+                <h1 id="deevo-title">Deevo</h1>
                 <p id="description">
                     Your personal daily devotion web application.
                 </p>
             </div>
         </div>
     </div>
+    <nav class="navbar navbar-expand-md navbar-default" id="main-navbar">
+        <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">Deevo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#deevo-navbar" aria-controls="deevo-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="deevo-navbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">LOG IN</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'bible:book' %}">SIGN UP</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <section id="about" class="container">
+        <h1>About</h1>
+        <p>
+            Deevo is a Django-based web application originally developed as a final project submission for CS 50.
+            The app allows you to read the Bible, write down reflections on your chosen verses each day, and help you
+            easily keep track of and edit your written devotions.
+        </p>
+    </section>
+
+    <section id="features" class="container">
+        <h2>Read</h2>
+        <p>Read the Word of God and easily switch between 7 different versions of the Bible.</p>
+
+        <h2>Reflect</h2>
+        <p>Choose a verse that inspired you and write your thoughts, reflections, or insights about it.</p>
+
+        <h2>Remain</h2>
+        <p>Keep track of your devotions so you stay committed to your personal journey with your faith.</p>
+    </section>
+
+     <section id="featured_verse" class="container">
+        <h1>I can do all things through Him who strengthens me.</h1>
+        <h2>Philippians 4:13</h2>
+    </section>
+
+     <section id="cto" class="container">
+        <h1>Deevo</h1>
+        <h2>Start your daily devotion with us.</h2>
+        <a href="{% url 'signup' %}" class="btn btn-md btn-light" id="get-started">Get Started</a>
+
+
+     <footer>
+        <h1>Deevo</h1>
+        <a href="#">Home</a>
+        <a href="#">Log in</a>
+        <a href="#">Sign up</a>
+        <a href="#">Harvard CS50</a>
+        <a href="#">Bible Database</a>
+        <a href="#">Django</a>
+        <p>Copyright © 2017. All rights reserved. Regina Alyssa.</p>
+    </footer>
 {% endblock %}
 
 {% block scripts %}
