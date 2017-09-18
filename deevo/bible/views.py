@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.urlresolvers import reverse
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, get_list_or_404, render
@@ -49,7 +50,7 @@ def get_version_model_from_id(version_id):
         raise Http404("Bible version does not exist")
     return model
 
-class BookListView(ListView):
+class BookListView(LoginRequiredMixin, ListView):
     template_name = 'bible/index.html'
     model = KeyEnglish
     context_object_name = 'book_list'
@@ -62,7 +63,7 @@ class BookListView(ListView):
         context['version'] = version_id
         return context
 
-class ChapterListView(ListView):
+class ChapterListView(LoginRequiredMixin, ListView):
     template_name = 'bible/chapter.html'
     context_object_name = 'verse_list'
 
@@ -81,6 +82,7 @@ class ChapterListView(ListView):
         context['chapter'] = self.kwargs["chapter_id"]
         context['version_link'] = self.kwargs["version_id"]
         return context
+
 
 def verse(request, version_id, book_id, chapter_id, verse_id):
     model = get_version_model_from_id(version_id)
