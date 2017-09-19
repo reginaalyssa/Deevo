@@ -16,22 +16,28 @@ p {
     color: white;
 }
 
+main {
+    min-height: 100%;
+}
+
 #home-main-div {
     padding: 0 30px;
 }
 
+.btn {
+    font-family: "OpenSans-Bold";
+    font-size: 0.8em;
+    padding: 10px 15px;
+}
+
 #know-more {
     color: white;
-    font-weight: bold;
     background-color: #39b54a;
-    font-size: smaller;
     margin-right: 5px;
 }
 
 #get-started {
     color: #003e08;
-    font-weight: bold;
-    font-size: smaller;
     margin-left: 5px;
 }
 

@@ -10,8 +10,8 @@
 {% block navbar %}{% endblock %}
 
 {% block container %}
-    <div id="hero" class="container-fluid">
-        <div class="row vertical-center">
+    <main id="main" class="row align-items-center">
+        <div class="container">
             <div class="col-12 col-lg-12 col-md-12 text-center">
                 <h1>Deevo</h1>
                 <p>
@@ -19,7 +19,7 @@
                 </p>
             </div>
         </div>
-    </div>
+    </main>
     <nav class="navbar navbar-expand-md navbar-default" id="main-navbar">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">Deevo</a>
@@ -35,55 +35,66 @@
             </div>
         </div>
     </nav>
-    <section id="about" class="container-fluid">
+    <section id="about" class="row align-items-center">
         <div class="container">
-            <div class="row vertical-center">
-                <div class="col-7">
-                    <h1>About</h1>
-                    <hr>
-                    <p>
-                        Deevo is a Django-based web application originally developed as a final project submission for CS 50.
-                        The app allows you to read the Bible, write down reflections on your chosen verses each day, and help you
-                        easily keep track of and edit your written devotions.
-                    </p>
-                </div>
-                <div class="col-5"></div>
+            <div class="col-7">
+                <h1>About</h1>
+                <hr>
+                <p>
+                    Deevo is a Django-based web application originally developed as a final project submission for CS 50.
+                    The app allows you to read the Bible, write down reflections on your chosen verses each day, and help you
+                    easily keep track of and edit your written devotions.
+                </p>
             </div>
         </div>
     </section>
 
-    <section id="features" class="container">
-        <h2>Read</h2>
-        <p>Read the Word of God and easily switch between 7 different versions of the Bible.</p>
+{#    <section id="features" class="row align-items-center">#}
+{#        <div class="container h-100">#}
+{#            <div class="row align-items-center">#}
+{#                <div class="col-4">#}
+{#                    <img src="{% static 'images/about/icons/read-icon.png' %}" alt="Books side by side with mouse cursor pointing to it">#}
+{#                    <h2>Read</h2>#}
+{#                    <hr>#}
+{#                    <p>Read the Word of God and easily switch between 7 different versions of the Bible.</p>#}
+{#                </div>#}
+{#                <div class="col-4">#}
+{#                    <img src="{% static 'images/about/icons/reflect-icon.png' %}" alt="Pencil writing on paper">#}
+{#                    <h2>Reflect</h2>#}
+{#                    <hr>#}
+{#                    <p>Choose a verse that inspired you and write your thoughts, reflections, or insights about it.</p>#}
+{#                </div>#}
+{#                <div class="col-4">#}
+{#                    <img src="{% static 'images/about/icons/remain-icon.png' %}" alt="Calendar icon with check">#}
+{#                    <h2>Remain</h2>#}
+{#                    <hr>#}
+{#                    <p>Keep track of your devotions so you stay committed to your personal journey with your faith.</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
 
-        <h2>Reflect</h2>
-        <p>Choose a verse that inspired you and write your thoughts, reflections, or insights about it.</p>
-
-        <h2>Remain</h2>
-        <p>Keep track of your devotions so you stay committed to your personal journey with your faith.</p>
-    </section>
-
-     <section id="featured_verse" class="container">
-        <h1>I can do all things through Him who strengthens me.</h1>
-        <h2>Philippians 4:13</h2>
-    </section>
-
-     <section id="cto" class="container">
-        <h1>Deevo</h1>
-        <h2>Start your daily devotion with us.</h2>
-        <a href="{% url 'signup' %}" class="btn btn-md btn-light" id="get-started">Get Started</a>
-
-
-     <footer>
-        <h1>Deevo</h1>
-        <a href="#">Home</a>
-        <a href="#">Log in</a>
-        <a href="#">Sign up</a>
-        <a href="#">Harvard CS50</a>
-        <a href="#">Bible Database</a>
-        <a href="#">Django</a>
-        <p>Copyright © 2017. All rights reserved. Regina Alyssa.</p>
-    </footer>
+{#     <section id="featured_verse" class="container">#}
+{#        <h1>I can do all things through Him who strengthens me.</h1>#}
+{#        <h2>Philippians 4:13</h2>#}
+{#    </section>#}
+{##}
+{#     <section id="cto" class="container">#}
+{#        <h1>Deevo</h1>#}
+{#        <h2>Start your daily devotion with us.</h2>#}
+{#        <a href="{% url 'signup' %}" class="btn btn-md btn-light" id="get-started">Get Started</a>#}
+{##}
+{##}
+{#     <footer>#}
+{#        <h1>Deevo</h1>#}
+{#        <a href="#">Home</a>#}
+{#        <a href="#">Log in</a>#}
+{#        <a href="#">Sign up</a>#}
+{#        <a href="#">Harvard CS50</a>#}
+{#        <a href="#">Bible Database</a>#}
+{#        <a href="#">Django</a>#}
+{#        <p>Copyright © 2017. All rights reserved. Regina Alyssa.</p>#}
+{#    </footer>#}
 {% endblock %}
 
 {% block scripts %}

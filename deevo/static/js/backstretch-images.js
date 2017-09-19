@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$("#hero").backstretch([
+	$("#main").backstretch([
 		"../static/images/about/1.jpg",
 		"../static/images/about/2.jpg",
 		"../static/images/about/3.jpg",

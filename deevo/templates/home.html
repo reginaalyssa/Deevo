@@ -18,7 +18,7 @@
     {% if user.is_authenticated %}
 	    <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
 	{% else %}
-        <div class="row vertical-center">
+        <main class="row align-items-center">
             <div class="col-12 col-lg-7" id="home-main-div">
                 <h1>Deevo</h1>
                 <p>
@@ -33,6 +33,6 @@
                 <p id="home-login">Already have an account? <a href="{% url 'login' %}">Log in here.</a></p>
             </div>
             <div class="col-lg-5"></div>
-        </div>
+        </main>
 	{% endif %}
 {% endblock %}
