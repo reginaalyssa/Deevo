@@ -1,6 +1,6 @@
 section {
     min-height: calc(100% - 50px);
-    padding: 50px;
+    padding: 50px 0;
 }
 
 p {
@@ -9,6 +9,10 @@ p {
 
 .row {
     margin: 0;
+}
+
+.container {
+
 }
 
 /* Section 1 - Header */
@@ -33,7 +37,8 @@ p {
 /* Section 2 - About */
 
 #about {
-    background-color: #39b54a;
+    background: #39b54a url("../images/about/poly-01.svg") no-repeat right bottom;
+    background-size: 750px auto;
     color: #ffffff;
 }
 
@@ -53,7 +58,8 @@ p {
 /* Section 3 - Features */
 
 #features {
-    background-color: #ebebeb;
+    background: #ebebeb url("../images/about/poly-02.svg") no-repeat right top;
+    background-size: 750px auto;
 }
 
 #features h2 {
@@ -64,7 +70,7 @@ p {
 
 #features hr {
     background-color: #11711e;
-    width: 15%;
+    width: 50px;
     height: 6px;
     border: 0;
     margin: 20px 0;
@@ -76,6 +82,6 @@ p {
     margin-bottom: 15px;
 }
 
-#features .col {
+#features .col-md-4 {
     padding: 0 30px;
 }
