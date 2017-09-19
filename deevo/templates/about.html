@@ -4,17 +4,17 @@
 
 {% block stylesheet %}
     {% load static %}
-    <link rel="stylesheet" href="{% static 'about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
 {% endblock %}
 
 {% block navbar %}{% endblock %}
 
 {% block container %}
-    <div id="home" class="container-fluid">
+    <div id="hero" class="container-fluid">
         <div class="row vertical-center">
             <div class="col-12 col-lg-12 col-md-12 text-center">
-                <h1 id="deevo-title">Deevo</h1>
-                <p id="description">
+                <h1>Deevo</h1>
+                <p>
                     Your personal daily devotion web application.
                 </p>
             </div>
@@ -22,26 +22,34 @@
     </div>
     <nav class="navbar navbar-expand-md navbar-default" id="main-navbar">
         <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}">Deevo</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#deevo-navbar" aria-controls="deevo-navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <a class="navbar-brand" href="{% url 'home' %}">Deevo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#deevo-navbar" aria-controls="deevo-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="deevo-navbar">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">LOG IN</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'bible:book' %}">SIGN UP</a></li>
-            </ul>
-        </div>
+            <div class="collapse navbar-collapse" id="deevo-navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">LOG IN</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'bible:book' %}">SIGN UP</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
-    <section id="about" class="container">
-        <h1>About</h1>
-        <p>
-            Deevo is a Django-based web application originally developed as a final project submission for CS 50.
-            The app allows you to read the Bible, write down reflections on your chosen verses each day, and help you
-            easily keep track of and edit your written devotions.
-        </p>
+    <section id="about" class="container-fluid">
+        <div class="container">
+            <div class="row vertical-center">
+                <div class="col-7">
+                    <h1>About</h1>
+                    <hr>
+                    <p>
+                        Deevo is a Django-based web application originally developed as a final project submission for CS 50.
+                        The app allows you to read the Bible, write down reflections on your chosen verses each day, and help you
+                        easily keep track of and edit your written devotions.
+                    </p>
+                </div>
+                <div class="col-5"></div>
+            </div>
+        </div>
     </section>
 
     <section id="features" class="container">
@@ -79,7 +87,7 @@
 {% endblock %}
 
 {% block scripts %}
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-    <script src="{% static "backstretch-images.js" %}"></script>
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>#}
+    <script src="{% static 'js/jquery.backstretch.min.js' %}"></script>
+    <script src="{% static 'js/backstretch-images.js' %}"></script>
 {% endblock %}

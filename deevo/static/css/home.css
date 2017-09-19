@@ -1,5 +1,5 @@
 body {
-    background: #020202 url("images/deevo-background.jpg") no-repeat left bottom;
+    background: #020202 url("../images/deevo-background.jpg") no-repeat left bottom;
 }
 
 p a, p a:hover {
@@ -14,6 +14,10 @@ h1 {
 
 p {
     color: white;
+}
+
+#home-main-div {
+    padding: 0 30px;
 }
 
 #know-more {

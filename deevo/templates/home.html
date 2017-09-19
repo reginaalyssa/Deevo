@@ -10,7 +10,7 @@
 {% block stylesheet %}
     {% if user.is_authenticated != True %}
         {% load static %}
-        <link rel="stylesheet" href="{% static 'home.css' %}">
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
     {% endif %}
 {% endblock %}
 
@@ -19,12 +19,12 @@
 	    <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
 	{% else %}
         <div class="row vertical-center">
-            <div class="col-12 col-lg-6 col-md-6">
+            <div class="col-12 col-lg-7" id="home-main-div">
                 <h1>Deevo</h1>
                 <p>
                     Your personal daily devotion web application.
                     Stay in touch with your faith by reflecting everyday on your chosen passage from the Bible
-                    as Deevo acts as your online diary of devotions. With 7 available Bible versions to choose from,
+                    as Deevo acts as the digital home for your devotions. With 7 available Bible versions to choose from,
                     you can gain different perspectives of the Word of God.
                 </p>
 
@@ -32,7 +32,7 @@
                 <a href="{% url 'signup' %}" class="btn btn-md btn-light" id="get-started">Get Started</a>
                 <p id="home-login">Already have an account? <a href="{% url 'login' %}">Log in here.</a></p>
             </div>
-            <div class="col-lg-6 col-md-6"></div>
+            <div class="col-lg-5"></div>
         </div>
 	{% endif %}
 {% endblock %}

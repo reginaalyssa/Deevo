@@ -1,6 +1,16 @@
 @font-face {
-    font-family: 'Affectionately-Yours';
-    src: url("fonts/Affectionately-Yours.ttf");
+    font-family: "Affectionately-Yours";
+    src: url("../fonts/Affectionately-Yours.ttf");
+}
+
+@font-face {
+    font-family: "OpenSans-Regular";
+    src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "OpenSans-Bold";
+    src: url("../fonts/OpenSans-Bold.ttf");
 }
 
 html {
@@ -9,6 +19,7 @@ html {
 
 body {
     height: 100%;
+    font-family: "OpenSans-Regular", sans-serif;
 }
 
 .vertical-center {
@@ -31,9 +42,11 @@ body {
 .nav-link {
     font-weight: 600;
     text-transform: uppercase;
-    padding-left: 10px;
-    padding-right: 10px;
     color: #353535;
+}
+
+.nav-item {
+    padding-left: 20px;
 }
 
 #main-navbar {
