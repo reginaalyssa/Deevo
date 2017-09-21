@@ -33,6 +33,7 @@
 
             <div class="collapse navbar-collapse" id="deevo-navbar">
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">ABOUT</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">LOG IN</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'bible:book' %}">SIGN UP</a></li>
                 </ul>
@@ -107,16 +108,22 @@
         </div>
     </section>
 
-    {#     <footer>#}
-    {#        <h1>Deevo</h1>#}
-    {#        <a href="#">Home</a>#}
-    {#        <a href="#">Log in</a>#}
-    {#        <a href="#">Sign up</a>#}
-    {#        <a href="#">Harvard CS50</a>#}
-    {#        <a href="#">Bible Database</a>#}
-    {#        <a href="#">Django</a>#}
-    {#        <p>Copyright © 2017. All rights reserved. Regina Alyssa.</p>#}
-    {#    </footer>#}
+    <footer class="row align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Deevo</h1>
+                    <a href="#">Home</a>
+                    <a href="#">Log in</a>
+                    <a href="#">Sign up</a>
+                    <a href="#">Harvard CS50</a>
+                    <a href="#">Bible Database</a>
+                    <a href="#">Django</a>
+                    <p>Copyright © 2017. All rights reserved. Regina Alyssa.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 {% endblock %}
 
 {% block scripts %}

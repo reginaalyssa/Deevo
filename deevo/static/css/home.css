@@ -1,5 +1,6 @@
 body {
     background: #020202 url("../images/deevo-background.jpg") no-repeat left bottom;
+    background-size: cover;
 }
 
 p a, p a:hover {
@@ -37,12 +38,20 @@ main {
     margin-right: 5px;
 }
 
+#know-more:hover {
+    background-color: #1a8f2a;
+}
+
 #get-started {
     color: #003e08;
     margin-left: 5px;
 }
 
+#get-started:hover {
+    background-color: #ebebeb;
+}
+
 #home-login {
-    font-size: 0.5rrem;
+    font-size: 0.8rem;
     margin-top: 10px;
 }

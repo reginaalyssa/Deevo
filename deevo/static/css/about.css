@@ -14,7 +14,7 @@ p {
     margin: 0;
 }
 
-/* Section 1 - Header */
+/* Section 1 - Main */
 
 #main {
     min-height: 100%;
@@ -129,6 +129,36 @@ p {
     padding: .75rem 1.75rem;
     border-radius: 1.5rem;
     margin-top: 10px;
+}
+
+#cto-button:hover {
+    background-color: #1a8f2a;
+}
+
+/* Footer */
+
+footer {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+footer h1 {
+    font-family: "Affectionately-Yours", sans-serif;
+}
+
+footer a {
+    color: #ffffff;
+    font-size: 0.95rem;
+    margin-right: 15px;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+footer p {
+    font-size: .75rem;
 }
 
 /* For viewers with screens smaller than 576px (phone, tablet, etc). */

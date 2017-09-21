@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="886965a9-f7f2-4043-85d1-51c7f92608e4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/deevo/static/images/about/featured-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/deevo/static/images/about/featured-overlay.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/deevo/static/images/about/gray-poly-01.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/deevo/static/images/about/green-poly-01.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/deevo/static/images/about/poly-01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/deevo/static/images/about/poly-02.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/static/css/about.css" afterPath="$PROJECT_DIR$/deevo/static/css/about.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/static/css/home.css" afterPath="$PROJECT_DIR$/deevo/static/css/home.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deevo/templates/about.html" afterPath="$PROJECT_DIR$/deevo/templates/about.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deevo/templates/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="103" column="92" lean-forward="false" selection-start-line="103" selection-start-column="92" selection-end-line="103" selection-end-column="92" />
+            <state relative-caret-position="-862">
+              <caret line="35" column="80" lean-forward="false" selection-start-line="35" selection-start-column="80" selection-end-line="35" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -57,17 +52,17 @@
         <entry file="file://$PROJECT_DIR$/deevo/static/css/about.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="362">
-              <caret line="131" column="1" lean-forward="true" selection-start-line="131" selection-start-column="1" selection-end-line="131" selection-end-column="1" />
+              <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="135" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/deevo/static/css/home.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+            <state relative-caret-position="34">
+              <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -175,10 +170,10 @@
         <option value="$PROJECT_DIR$/deevo/templates/base.html" />
         <option value="$PROJECT_DIR$/deevo/static/js/backstretch-images.js" />
         <option value="$PROJECT_DIR$/deevo/templates/home.html" />
-        <option value="$PROJECT_DIR$/deevo/static/css/home.css" />
         <option value="$PROJECT_DIR$/deevo/static/css/style.css" />
         <option value="$PROJECT_DIR$/deevo/templates/about.html" />
         <option value="$PROJECT_DIR$/deevo/static/css/about.css" />
+        <option value="$PROJECT_DIR$/deevo/static/css/home.css" />
       </list>
     </option>
   </component>
@@ -654,10 +649,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deevo/static/css/home.css">
+    <entry file="file://$PROJECT_DIR$/deevo/templates/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+        <state relative-caret-position="-862">
+          <caret line="35" column="80" lean-forward="false" selection-start-line="35" selection-start-column="80" selection-end-line="35" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deevo/static/css/about.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="135" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -670,18 +673,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deevo/static/css/about.css">
+    <entry file="file://$PROJECT_DIR$/deevo/static/css/home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="131" column="1" lean-forward="true" selection-start-line="131" selection-start-column="1" selection-end-line="131" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deevo/templates/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="103" column="92" lean-forward="false" selection-start-line="103" selection-start-column="92" selection-end-line="103" selection-end-column="92" />
+        <state relative-caret-position="34">
+          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
           <folding />
         </state>
       </provider>
