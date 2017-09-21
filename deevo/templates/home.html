@@ -7,6 +7,7 @@
         Home
     {% endif %}
 {% endblock %}
+
 {% block stylesheet %}
     {% if user.is_authenticated != True %}
         {% load static %}
@@ -14,18 +15,23 @@
     {% endif %}
 {% endblock %}
 
+{% block navbar %}
+    {% if user.is_authenticated %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
 {% block content %}
     {% if user.is_authenticated %}
-	    <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
-	{% else %}
+        <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
+    {% else %}
         <main class="row align-items-center">
             <div class="col-12 col-lg-7" id="home-main-div">
                 <h1>Deevo</h1>
                 <p>
-                    Your personal daily devotion web application.
-                    Stay in touch with your faith by reflecting everyday on your chosen passage from the Bible
-                    as Deevo acts as the digital home for your devotions. With 7 available Bible versions to choose from,
-                    you can gain different perspectives of the Word of God.
+                    Your personal daily devotion web application. Stay in touch with your faith by reflecting everyday
+                    on your chosen passage from the Bible as Deevo acts as the digital home for your devotions. With 7
+                    available Bible versions to choose from, you can gain different perspectives of the Word of God.
                 </p>
 
                 <a href="{% url 'about' %}" class="btn btn-md" id="know-more">Know More</a>
@@ -34,5 +40,5 @@
             </div>
             <div class="col-lg-5"></div>
         </main>
-	{% endif %}
+    {% endif %}
 {% endblock %}

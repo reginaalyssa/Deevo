@@ -20,25 +20,39 @@
 {#    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>#}
 </head>
 <body>
+{% block hero %}
+{% endblock %}
 {% block navbar %}
-    {% if user.is_authenticated %}
-        <nav class="navbar navbar-expand-md navbar-light bg-light navbar-default">
+    <nav class="navbar navbar-expand-md navbar-light bg-light navbar-default" id="main-navbar">
+        <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">Deevo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#deevo-navbar" aria-controls="deevo-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#deevo-navbar"
+                    aria-controls="deevo-navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="deevo-navbar">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'bible:book' %}">Bible</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'devotions:new' %}">Reflect (New Devotion)</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'devotions:view_devotions' %}">Devotions</a></li>
-                    <li><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
-                </ul>
+                {% if user.is_authenticated %}
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'bible:book' %}">Bible</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'devotions:new' %}">Reflect (New Devotion)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'devotions:view_devotions' %}">Devotions</a></li>
+                    </ul>
+
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                    </ul>
+                {% else %}
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">ABOUT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">LOG IN</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'bible:book' %}">SIGN UP</a></li>
+                    </ul>
+                {% endif %}
             </div>
-        </nav>
-    {% endif %}
+        </div>
+    </nav>
 {% endblock %}
 {% block container %}
     <div class="container">
