@@ -2,21 +2,15 @@
 
 {% block title %}Sign up{% endblock %}
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text|safe }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
+    <div class="row main-container">
+        <div class="col-4 mx-auto">
+            <h1 class="main-header">Sign up</h1>
+            <form method="post">
+                {% csrf_token %}
+                {% load crispy_forms_tags %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-md form-control green-button">Sign up</button>
+            </form>
+        </div>
+    </div>
 {% endblock %}
