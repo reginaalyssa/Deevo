@@ -6,14 +6,6 @@ p {
     font-size: 1.25rem;
 }
 
-.full-height {
-    min-height: calc(100% - 50px);
-}
-
-.row {
-    margin: 0;
-}
-
 /* Section 1 - Main */
 
 #main {

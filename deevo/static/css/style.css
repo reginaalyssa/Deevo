@@ -29,6 +29,14 @@ body {
     font-family: "OpenSans-Regular", sans-serif;
 }
 
+.row {
+    margin: 0;
+}
+
+.full-height {
+    min-height: calc(100% - 50px);
+}
+
 .vertical-center {
     position: relative;
     top: 50%;

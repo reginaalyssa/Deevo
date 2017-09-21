@@ -25,20 +25,27 @@
     {% if user.is_authenticated %}
         <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
     {% else %}
-        <main class="row align-items-center">
-            <div class="col-12 col-lg-7" id="home-main-div">
-                <h1>Deevo</h1>
-                <p>
-                    Your personal daily devotion web application. Stay in touch with your faith by reflecting everyday
-                    on your chosen passage from the Bible as Deevo acts as the digital home for your devotions. With 7
-                    available Bible versions to choose from, you can gain different perspectives of the Word of God.
-                </p>
+        <main class="row align-items-center full-height">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-7" id="home-main-div">
+                        <h1>Deevo</h1>
+                        <p>
+                            Your personal daily devotion web application. Stay in touch with your faith by reflecting
+                            everyday
+                            on your chosen passage from the Bible as Deevo acts as the digital home for your devotions.
+                            With 7
+                            available Bible versions to choose from, you can gain different perspectives of the Word of
+                            God.
+                        </p>
 
-                <a href="{% url 'about' %}" class="btn btn-md" id="know-more">Know More</a>
-                <a href="{% url 'signup' %}" class="btn btn-md btn-light" id="get-started">Get Started</a>
-                <p id="home-login">Already have an account? <a href="{% url 'login' %}">Log in here.</a></p>
+                        <a href="{% url 'about' %}" class="btn btn-md" id="know-more">Know More</a>
+                        <a href="{% url 'signup' %}" class="btn btn-md btn-light" id="get-started">Get Started</a>
+                        <p id="home-login">Already have an account? <a href="{% url 'login' %}">Log in here.</a></p>
+                    </div>
+                    <div class="col-lg-5"></div>
+                </div>
             </div>
-            <div class="col-lg-5"></div>
         </main>
     {% endif %}
 {% endblock %}
