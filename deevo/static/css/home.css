@@ -8,7 +8,7 @@ p a, p a:hover {
 
 h1 {
     font-family: "Affectionately-Yours", sans-serif;
-    font-size: 5.5em;
+    font-size: 5.5rem;
     color: white;
 }
 
@@ -26,7 +26,8 @@ main {
 
 .btn {
     font-family: "OpenSans-Bold";
-    font-size: 0.8em;
+    font-size: 0.8rem;
+    min-font-size: 0.8rem;
     padding: 10px 15px;
 }
 
@@ -42,6 +43,6 @@ main {
 }
 
 #home-login {
-    font-size: smaller;
+    font-size: 0.5rrem;
     margin-top: 10px;
 }
