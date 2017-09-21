@@ -78,6 +78,7 @@ body {
 
 .green-button:hover {
     background-color: #1a8f2a;
+    color: #ffffff;
 }
 
 .main-header {
@@ -88,4 +89,8 @@ body {
 
 .main-container {
     padding: 50px 0;
+}
+
+.help-block {
+    color: red;
 }
