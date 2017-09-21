@@ -62,3 +62,16 @@ body {
     background-color: #ffffff;
     padding: 0 1rem;
 }
+
+.green-button {
+    background-color: #39b54a;
+    font-family: "OpenSans-Bold", sans-serif;
+    color: #ffffff;
+    padding: .75rem 1.75rem;
+    border-radius: 1.5rem;
+    margin-top: 10px;
+}
+
+.green-button:hover {
+    background-color: #1a8f2a;
+}
