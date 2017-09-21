@@ -10,7 +10,7 @@
 {% block navbar %}{% endblock %}
 
 {% block container %}
-    <main id="main" class="row align-items-center">
+    <main id="main" class="row align-items-center full-height">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -22,10 +22,12 @@
             </div>
         </div>
     </main>
+
     <nav class="navbar navbar-expand-md navbar-light bg-light navbar-default row" id="main-navbar">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">Deevo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#deevo-navbar" aria-controls="deevo-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#deevo-navbar"
+                    aria-controls="deevo-navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -37,15 +39,18 @@
             </div>
         </div>
     </nav>
-    <section id="about" class="row align-items-center">
+
+    <section id="about" class="row align-items-center full-height">
         <div class="container">
             <div class="row">
                 <div class="col-sm-7">
                     <h1>About</h1>
                     <hr>
                     <p>
-                        Deevo is a Django-based web application originally developed as a final project submission for CS 50.
-                        The app allows you to read the Bible, write down reflections on your chosen verses each day, and help you
+                        Deevo is a Django-based web application originally developed as a final project submission for
+                        CS 50.
+                        The app allows you to read the Bible, write down reflections on your chosen verses each day, and
+                        help you
                         easily keep track of and edit your written devotions.
                     </p>
                 </div>
@@ -53,11 +58,12 @@
         </div>
     </section>
 
-    <section id="features" class="row align-items-center">
+    <section id="features" class="row align-items-center full-height">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="{% static 'images/about/icons/read-icon.png' %}" alt="Books side by side with mouse cursor pointing to it">
+                    <img src="{% static 'images/about/icons/read-icon.png' %}"
+                         alt="Books side by side with mouse cursor pointing to it">
                     <h2>Read</h2>
                     <hr>
                     <p>Read the Word of God and easily switch between 7 different versions of the Bible.</p>
@@ -78,7 +84,7 @@
         </div>
     </section>
 
-     <section id="featured-verse" class="row align-items-center">
+    <section id="featured-verse" class="row align-items-center full-height">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -89,26 +95,32 @@
         </div>
     </section>
 
-{#     <section id="cto" class="container">#}
-{#        <h1>Deevo</h1>#}
-{#        <h2>Start your daily devotion with us.</h2>#}
-{#        <a href="{% url 'signup' %}" class="btn btn-md btn-light" id="get-started">Get Started</a>#}
-{##}
-{##}
-{#     <footer>#}
-{#        <h1>Deevo</h1>#}
-{#        <a href="#">Home</a>#}
-{#        <a href="#">Log in</a>#}
-{#        <a href="#">Sign up</a>#}
-{#        <a href="#">Harvard CS50</a>#}
-{#        <a href="#">Bible Database</a>#}
-{#        <a href="#">Django</a>#}
-{#        <p>Copyright © 2017. All rights reserved. Regina Alyssa.</p>#}
-{#    </footer>#}
+    <section id="cto" class="row align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Deevo</h1>
+                    <h2>Start your daily devotion with us.</h2>
+                    <a href="{% url 'signup' %}" class="btn btn-md btn-light" id="cto-button">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {#     <footer>#}
+    {#        <h1>Deevo</h1>#}
+    {#        <a href="#">Home</a>#}
+    {#        <a href="#">Log in</a>#}
+    {#        <a href="#">Sign up</a>#}
+    {#        <a href="#">Harvard CS50</a>#}
+    {#        <a href="#">Bible Database</a>#}
+    {#        <a href="#">Django</a>#}
+    {#        <p>Copyright © 2017. All rights reserved. Regina Alyssa.</p>#}
+    {#    </footer>#}
 {% endblock %}
 
 {% block scripts %}
-{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>#}
+    {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>#}
     <script src="{% static 'js/jquery.backstretch.min.js' %}"></script>
     <script src="{% static 'js/backstretch-images.js' %}"></script>
 {% endblock %}

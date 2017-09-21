@@ -1,10 +1,13 @@
 section {
-    min-height: calc(100% - 50px);
     padding: 50px 0;
 }
 
 p {
     font-size: 1.25rem;
+}
+
+.full-height {
+    min-height: calc(100% - 50px);
 }
 
 .row {
@@ -23,11 +26,11 @@ p {
     font-family: "Affectionately-Yours", sans-serif;
     font-size: 8rem;
     margin-bottom: 0;
-    height: 150px;
+    height: 120px;
 }
 
 #main p {
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 
 /* Section 2 - About */
@@ -39,7 +42,7 @@ p {
 }
 
 #about h1 {
-    font-size: 4em;
+    font-size: 4rem;
     font-family: "OpenSans-Bold", sans-serif
 }
 
@@ -101,8 +104,41 @@ p {
 
 }
 
+/* Section 5 - Call to Action */
+
+#cto {
+    background: #ffffff url("../images/about/poly-03.svg") no-repeat right bottom;
+}
+
+#cto h1 {
+    font-size: 5rem;
+    font-family: "Affectionately-Yours", sans-serif;
+    height: 80px;
+    margin-bottom: 0;
+}
+
+#cto h2 {
+    font-family: "OpenSans-Bold", sans-serif;
+    font-size: 3rem;
+}
+
+#cto-button {
+    background-color: #39b54a;
+    font-family: "OpenSans-Bold", sans-serif;
+    color: #ffffff;
+    padding: .75rem 1.75rem;
+    border-radius: 1.5rem;
+    margin-top: 10px;
+}
+
+/* For viewers with screens smaller than 576px (phone, tablet, etc). */
+
 @media (max-width: 576px) {
     #featured-verse h1 {
         font-size: 2.45rem;
+    }
+
+    #cto h2 {
+        font-size: 2rem;
     }
 }
