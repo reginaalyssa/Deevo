@@ -35,10 +35,6 @@ body {
     transform: translateY(-50%);
 }
 
-.container {
-    height: 100%;
-}
-
 #main-navbar .navbar-brand {
     font-family: "Affectionately-Yours", sans-serif;
     font-weight: bold;

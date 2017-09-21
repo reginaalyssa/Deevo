@@ -1,0 +1,9 @@
+h1 {
+    font-family: "OpenSans-Bold", sans-serif;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.row {
+    padding: 50px 0;
+}

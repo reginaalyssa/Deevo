@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'bible.apps.BibleConfig',
     'devotions.apps.DevotionsConfig',
     'formtools',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,7 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
 
 LOGIN_URL = 'login'
+
+# Crispy forms
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

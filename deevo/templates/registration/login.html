@@ -8,11 +8,15 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Log in</h2>
-
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-md green-button">Log in</button>
-    </form>
+    <div class="row">
+        <div class="col-4 mx-auto">
+            <h1>Log in</h1>
+            <form method="post">
+                {% csrf_token %}
+                {% load crispy_forms_tags %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-md form-control green-button">Log in</button>
+            </form>
+        </div>
+    </div>
 {% endblock %}
