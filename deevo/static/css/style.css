@@ -102,3 +102,7 @@ body {
 .dropdown-item:hover {
     background-color: #96f5a3;
 }
+
+.dropdown-item i {
+    margin-right: 15px;
+}
