@@ -2,30 +2,42 @@
 {% load i18n %}
 {% block title %}Devotion{% endblock %}
 
+{% block stylesheet %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/devotions.css' %}">
+{% endblock %}
+
 {% block content %}
-    <div class="container main-container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mx-auto">
-                <div class="main-header text-center">
-                    <h1 class="margin-0">New Devotion</h1>
-                    <h2>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}: Choose Verse</h2>
+    <div class="container">
+        <small class="text-muted">
+            <a href="{% url 'home' %}">Deevo</a> >
+            <span class="text-bold">New Devotion</span> >
+            <span class="text-bold">Choose Verse</span>
+        </small>
+        <div class="main-container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <div class="main-header text-center">
+                        <h1 class="margin-0">New Devotion</h1>
+                        <h2>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}: Choose Verse</h2>
+                    </div>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        {% load crispy_forms_tags %}
+                        {{ wizard.management_form }}
+                        {% if wizard.form.forms %}
+                            {{ wizard.form.management_form }}
+                            {% for form in wizard.form.forms %}
+                                {{ form|crispy }}
+                            {% endfor %}
+                        {% else %}
+                            {{ wizard.form|crispy }}
+                        {% endif %}
+
+                        <input type="submit" value="Next Step" class="btn btn-md form-control green-button"/>
+                    </form>
                 </div>
-
-                <form method="post">
-                    {% csrf_token %}
-                    {% load crispy_forms_tags %}
-                    {{ wizard.management_form }}
-                    {% if wizard.form.forms %}
-                        {{ wizard.form.management_form }}
-                        {% for form in wizard.form.forms %}
-                            {{ form|crispy }}
-                        {% endfor %}
-                    {% else %}
-                        {{ wizard.form|crispy }}
-                    {% endif %}
-
-                    <input type="submit" value="Next Step" class="btn btn-md form-control green-button"/>
-                </form>
             </div>
         </div>
     </div>

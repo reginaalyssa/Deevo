@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}Reflect (New Devotion){% endblock %}
 
+{% block stylesheet %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/devotions.css' %}">
+{% endblock %}
+
 {% block content %}
     <div class="container main-container">
         <div class="row">

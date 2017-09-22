@@ -2,42 +2,50 @@
 {% block title %}Devotion{% endblock %}
 
 {% block content %}
-    <div class="container main-container">
-        <div class="row">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <div class="main-header text-center">
-                    <h1 class="margin-0">New Devotion</h1>
-                    <h2>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}: Write Reflection</h2>
-                </div>
-
-                <div class="chosen-verse">
-                    <h2 class="text-bold">Your chosen verse:</h2>
-                    <blockquote>{{ verse.t }}</blockquote>
-                    <div class="text-right">
-                        <p class="verse-info text-bold">{{ book.n }} {{ chapter }}:{{ verse.v }}</p>
-                        <p class="version-info">{{ version.version }} ({{ version.abbreviation }})</p>
+    <div class="container">
+        <small class="text-muted">
+            <a href="{% url 'home' %}">Deevo</a> >
+            <span class="text-bold">New Devotion</span> >
+            <a href="{% url 'devotions:new' %}">Choose Verse</a> >
+            <span class="text-bold">Write Reflection</span>
+        </small>
+        <div class="main-container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <div class="main-header text-center">
+                        <h1 class="margin-0">New Devotion</h1>
+                        <h2>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}: Write Reflection</h2>
                     </div>
+
+                    <div class="chosen-verse">
+                        <h2 class="text-bold">Your chosen verse:</h2>
+                        <blockquote>{{ verse.t }}</blockquote>
+                        <div class="text-right">
+                            <p class="verse-info text-bold">{{ book.n }} {{ chapter }}:{{ verse.v }}</p>
+                            <p class="version-info">{{ version.version }} ({{ version.abbreviation }})</p>
+                        </div>
+                    </div>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        {% load crispy_forms_tags %}
+                        {{ wizard.management_form }}
+                        {% if wizard.form.forms %}
+                            {{ wizard.form.management_form }}
+                            {% for form in wizard.form.forms %}
+                                {{ form|crispy }}
+                            {% endfor %}
+                        {% else %}
+                            {{ wizard.form|crispy }}
+                        {% endif %}
+
+                        {% if wizard.steps.prev %}
+                            <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}" class="btn btn-md gray-button">Change Verse</button>
+                        {% endif %}
+                        <input type="submit" value="Save Devotion" class="btn btn-md green-button"/>
+                    </form>
+                    <small class="text-muted"><span class="text-bold">Note:</span> If you click on Change Verse, you will go back to the previous form and lose all text you have written for Title and Reflection.</small>
                 </div>
-
-                <form method="post">
-                    {% csrf_token %}
-                    {% load crispy_forms_tags %}
-                    {{ wizard.management_form }}
-                    {% if wizard.form.forms %}
-                        {{ wizard.form.management_form }}
-                        {% for form in wizard.form.forms %}
-                            {{ form|crispy }}
-                        {% endfor %}
-                    {% else %}
-                        {{ wizard.form|crispy }}
-                    {% endif %}
-
-                    {% if wizard.steps.prev %}
-                        <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}" class="btn btn-md gray-button">Change Verse</button>
-                    {% endif %}
-                    <input type="submit" value="Save Devotion" class="btn btn-md green-button"/>
-                </form>
-                <small class="text-muted"><span class="text-bold">Note:</span> If you click on Change Verse, you will go back to the previous form and lose all text you have written for Title and Reflection.</small>
             </div>
         </div>
     </div>

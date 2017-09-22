@@ -11,8 +11,8 @@
         {% if user_id == user.id %}
             <small class="text-muted">
                 <a href="{% url 'home' %}">Deevo</a> >
-                <a href="{% url 'devotions:view_devotions' %}">View Devotions</a>
-                > {{ devotion.title }}
+                <a href="{% url 'devotions:view_devotions' %}">View Devotions</a> >
+                <span class="text-bold">{{ devotion.title }}</span>
             </small>
             <div class="main-container">
                 <div class="row">

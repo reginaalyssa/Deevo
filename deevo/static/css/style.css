@@ -37,7 +37,7 @@ body {
 
 h2 {
     font-size: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
 }
 
 textarea {
@@ -166,10 +166,4 @@ a:hover {
 .version-info {
     font-size: 0.7rem;
     margin-bottom: 0;
-}
-
-.btn-link {
-    padding: 0;
-    display: block;
-    margin-bottom: 1rem;
 }
