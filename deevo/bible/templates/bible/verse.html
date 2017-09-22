@@ -4,14 +4,34 @@
 {% block title %}{{ book.n }} {{ chapter }}:{{ verse.v }}{% endblock %}
 
 {% block content %}
-    Change version:
-    <form action="{% url 'bible:change_version_verse' book.id chapter verse.v %}" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Submit" />
-    </form>
-    <h3>{{ book.n }} {{ chapter }}:{{ verse.v }}</h3>
-    <h4>{{ version.version }} ({{ version.abbreviation }})</h4>
-    <p>{{ verse.v }} {{ verse.t|remove_backslash }}</p>
-    <a href="{% url 'devotions:reflect' version_link book.id chapter verse.v %}">Reflect on Verse</a>
+    <div class="container">
+        <small class="text-muted">
+            <a href="{% url 'home' %}">Deevo</a> >
+            <a href="{% url 'bible:book' %}">Read Bible</a> >
+            <a href="{% url 'bible:chapter' version.abbreviation|lower book.id chapter %}">{{ book.n }}: Chapter {{ chapter }}</a> >
+            <span class="text-bold">{{ book.n }} {{ chapter }}:{{ verse.v }}</span>
+        </small>
+        <div class="main-container">
+            <div class="row">
+                <div class="col-md-4">
+                    <aside>
+                        <form action="{% url 'bible:change_version_verse' book.id chapter verse.v %}" method="post">
+                            {% csrf_token %}
+                            {% load crispy_forms_tags %}
+                            {{ form|crispy }}
+                            <input type="submit" value="Change version" class="btn btn-md green-button form-control" />
+                        </form>
+                    </aside>
+                </div>
+                <div class="col-md-8">
+                    <div class="main-header">
+                        <h1 class="margin-0 text-bold">{{ book.n }} {{ chapter }}:{{ verse.v }}</h1>
+                        <h3>{{ version }}</h3>
+                    </div>
+                    <p>{{ verse.v }} {{ verse.t|remove_backslash }}</p>
+                    <a href="{% url 'devotions:reflect' version_link book.id chapter verse.v %}" class="text-bold">Reflect on Verse</a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

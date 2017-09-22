@@ -12,6 +12,7 @@
             <a href="{% url 'home' %}">Deevo</a> >
             <a href="{% url 'bible:book' %}">Read Bible</a> >
             <a href="{% url 'bible:chapter' version.abbreviation|lower book.id verse.c%}">{{ book.n }}: Chapter {{ verse.c }}</a> >
+            <a href="{% url 'bible:verse' version.abbreviation|lower book.id verse.c verse.v %}">{{ book.n }} {{ verse.c }}:{{ verse.v }}</a> >
             <span class="text-bold">New Devotion</span> >
             <span class="text-bold">Write Reflection</span>
         </small>
