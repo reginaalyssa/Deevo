@@ -54,7 +54,6 @@ body {
 #main-navbar .navbar-nav .nav-item .nav-link {
     font-family: "OpenSans-Bold", sans-serif;
     font-size: 0.85em;
-    text-transform: uppercase;
     color: #353535;
 }
 
@@ -93,4 +92,13 @@ body {
 
 .help-block {
     color: red;
+}
+
+/* django-crispy-forms remove asterisk for required field */
+.asteriskField {
+    display: none;
+}
+
+.dropdown-item:hover {
+    background-color: #96f5a3;
 }
