@@ -1,0 +1,29 @@
+.devotion-content {
+    font-family: "Lora-Regular", serif;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    margin: 2rem 0 3em 0;
+}
+
+.view-devotion .chosen-verse {
+    padding: 2em 5em;
+}
+
+.divider {
+    text-align: center;
+    border-bottom: 1px solid rgb(224, 225, 230);
+    margin: 0px auto 3.5em;
+}
+
+.date {
+    display: inline-block;
+    position: relative;
+    background: #ffffff;
+    font-family: "Lora-Regular",Georgia,serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 0 0.45em;
+    top: 0.9em;
+    letter-spacing: 1px;
+}

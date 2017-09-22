@@ -1,21 +1,50 @@
 {% extends 'base.html' %}
 {% block title %}View Devotion{% endblock %}
 
+{% block stylesheet %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/devotions.css' %}">
+{% endblock %}
+
 {% block content %}
-    {% if user_id == user.id %}
-        <h2>View Devotions</h2>
-        <h3>{{ devotion.title }}</h3>
-        <small>
-            Published on {{ devotion.pub_date }} <br/>
-            {% if devotion.edit_date != devotion.pub_date %}
-                Last edited on {{ devotion.edit_date }} <br/>
-            {% endif %}
-            {{ book.n }} {{ verse.c }}:{{ verse.v }} ({{ version }}) <br/>
-            {{ verse.t }} <br/>
-        </small>
-        <p>{{ devotion.reflection }}</p>
-        <a href="{% url 'devotions:edit' devotion.id %}">Edit</a>
+    <div class="container">
+        {% if user_id == user.id %}
+            <small class="text-muted">
+                <a href="{% url 'devotions:view_devotions' %}">View Devotions</a>
+                > {{ devotion.title }}
+            </small>
+            <div class="main-container">
+                <div class="row">
+                    <div class="col-md-8 mx-auto view-devotion">
+                        <div class="divider">
+                            <small class="text-muted date">
+                            Written on {{ devotion.pub_date }}<br/>
+                            {% if devotion.edit_date != devotion.pub_date %}
+                                Last edited on {{ devotion.edit_date }}<br/>
+                            {% endif %}
+                        </small>
+                        </div>
+                        <h1 class="main-header text-center">{{ devotion.title }}</h1>
+
+                        <div class="chosen-verse">
+                            <blockquote>{{ verse.t }}</blockquote>
+                            <div class="text-right">
+                                <p class="verse-info text-bold">{{ book.n }} {{ verse.c }}:{{ verse.v }}</p>
+                                <p class="version-info">{{ version.version }} ({{ version.abbreviation }})</p>
+                            </div>
+                        </div>
+                        <p class="devotion-content">{{ devotion.reflection }}</p>
+                        <a href="{% url 'devotions:view_devotions' %}" class="btn btn-md gray-button">
+                            <i class="fa fa-backward"></i> Back
+                        </a>
+                        <a href="{% url 'devotions:edit' devotion.id %}" class="btn btn-md green-button">
+                            <i class="fa fa-edit"></i> Edit
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     {% else %}
-        <p>You are not authorized to view this page.</p>
-    {% endif %}
+        <p>Oops, it looks like you're not allowed to view this page. <a href="{% url 'home' %}">Click here to go back to your dashboard.</a></p>
+     {% endif %}
 {% endblock %}

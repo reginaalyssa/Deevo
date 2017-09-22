@@ -18,6 +18,11 @@
     src: url("../fonts/Museo-900.otf");
 }
 
+@font-face {
+    font-family: "Lora-Regular";
+    src: url("../fonts/Lora-Regular.ttf");
+}
+
 html {
     height: 100%;
     min-height: 410px;
@@ -27,6 +32,7 @@ html {
 body {
     height: 100%;
     font-family: "OpenSans-Regular", sans-serif;
+    color: #353535;
 }
 
 h2 {
@@ -137,13 +143,16 @@ textarea {
 }
 
 .chosen-verse {
-    background-color: #f9f9f9;
-    padding: 30px;
-    border: 1px solid #0b2e13;
-    border-radius: 0.25rem;
-    /*color: #11711e;*/
+    /*background-color: #f9f9f9;*/
+    /*border: 1px solid #0b2e13;*/
+    /*border-radius: 0.25rem;*/
     font-size: 0.85rem;
-    margin-bottom: 20px;
+    padding: 30px;
+    /*margin-bottom: 20px;*/
+}
+
+.chosen-verse blockquote {
+    letter-spacing: 0.09em;
 }
 
 .verse-info {
