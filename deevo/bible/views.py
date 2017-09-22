@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, get_list_or_404
 from django.views.generic import ListView, DetailView
 
 from .models import *
-from .forms import VersionForm, ChapterForm
+from .forms import ChapterForm, VerseForm, VersionForm
 
 def change_version_book(request):
     if request.method == 'POST':
@@ -33,7 +33,7 @@ def change_version_verse(request, book_id, chapter_id, verse_id):
 
 def change_chapter(request, version_id, book_id):
     if request.method == 'POST':
-        form = ChapterForm(request.POST, model=get_version_model_from_abbr(version_id), book_id={'book_id': book_id})
+        form = ChapterForm(request.POST, model=get_version_model_from_abbr(version_id), book_id=book_id)
 
         if form.is_valid():
             chapter = form.cleaned_data['chapter']
@@ -41,6 +41,18 @@ def change_chapter(request, version_id, book_id):
             chapter = form.data['chapter']
 
         return HttpResponseRedirect(reverse('bible:chapter', args=(version_id, book_id, chapter,)))
+
+def change_verse(request, version_id, book_id, chapter_id):
+    if request.method == 'POST':
+        form = VerseForm(request.POST, model=get_version_model_from_abbr(version_id), book_id=book_id, chapter_id=chapter_id)
+
+        if form.is_valid():
+            verse = form.cleaned_data['verse']
+        else:
+            verse = form.data['verse']
+
+        return HttpResponseRedirect(reverse('bible:verse', args=(version_id, book_id, chapter_id, verse,)))
+
 
 def get_version_model_from_abbr(version_abbr):
     version_abbr = version_abbr.lower()
@@ -115,7 +127,7 @@ class ChapterListView(LoginRequiredMixin, ListView):
         context['chapter'] = self.kwargs['chapter_id']
         context['version_link'] = self.kwargs['version_id']
         model = get_version_model_from_id(version.id)
-        context['chapter_form'] = ChapterForm(self.request.POST or None, initial={'chapter': context['chapter']}, model=model, book_id={'book_id': self.kwargs['book_id']})
+        context['chapter_form'] = ChapterForm(self.request.POST or None, initial={'chapter': context['chapter']}, model=model, book_id=self.kwargs['book_id'])
         return context
 
 class VerseDetailView(LoginRequiredMixin, DetailView):
@@ -131,9 +143,12 @@ class VerseDetailView(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super(VerseDetailView, self).get_context_data(**kwargs)
         version = get_object_or_404(BibleVersionKey, abbreviation=self.kwargs['version_id'].upper())
-        context['form'] = VersionForm(self.request.POST or None, initial={'version': version.id})
+        context['version_form'] = VersionForm(self.request.POST or None, initial={'version': version.id})
         context['version'] = version
         context['book'] = get_object_or_404(KeyEnglish, pk=self.kwargs['book_id'])
         context['chapter'] = self.kwargs['chapter_id']
         context['version_link'] = self.kwargs['version_id']
+        model = get_version_model_from_abbr(self.kwargs['version_id'])
+        context['verse_form'] = VerseForm(self.request.POST or None, initial={'verse': self.kwargs['verse_id']},
+                                              model=model, book_id=self.kwargs['book_id'], chapter_id=self.kwargs['chapter_id'])
         return context

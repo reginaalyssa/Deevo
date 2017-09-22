@@ -46,7 +46,7 @@ class TAsv(models.Model):
     t = models.TextField()
 
     def __str__(self):
-        return self.t
+        return str(self.v)
 
     class Meta:
         managed = False
@@ -60,7 +60,7 @@ class TBbe(models.Model):
     t = models.TextField()
 
     def __str__(self):
-        return self.t
+        return str(self.v)
 
     class Meta:
         managed = False
@@ -74,7 +74,7 @@ class TDby(models.Model):
     t = models.TextField()
 
     def __str__(self):
-        return self.t
+        return str(self.v)
 
     class Meta:
         managed = False
@@ -88,7 +88,7 @@ class TKjv(models.Model):
     t = models.TextField()
 
     def __str__(self):
-        return self.t
+        return str(self.v)
 
     class Meta:
         managed = False
@@ -102,7 +102,7 @@ class TWbt(models.Model):
     t = models.TextField()
 
     def __str__(self):
-        return self.t
+        return str(self.v)
 
     class Meta:
         managed = False
@@ -116,7 +116,7 @@ class TWeb(models.Model):
     t = models.TextField()
 
     def __str__(self):
-        return self.t
+        return str(self.v)
 
     class Meta:
         managed = False
@@ -130,7 +130,7 @@ class TYlt(models.Model):
     t = models.TextField()
 
     def __str__(self):
-        return self.t
+        return str(self.v)
 
     class Meta:
         managed = False

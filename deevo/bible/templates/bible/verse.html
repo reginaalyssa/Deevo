@@ -23,8 +23,15 @@
                         <form action="{% url 'bible:change_version_verse' book.id chapter verse.v %}" method="post">
                             {% csrf_token %}
                             {% load crispy_forms_tags %}
-                            {{ form|crispy }}
+                            {{ version_form|crispy }}
                             <input type="submit" value="Change version" class="btn btn-md green-button form-control" />
+                        </form>
+
+                        <form action="{% url 'bible:change_verse' version.abbreviation|lower book.id chapter %}" method="post">
+                            {% csrf_token %}
+                            {% load crispy_forms_tags %}
+                            {{ verse_form|crispy }}
+                            <input type="submit" value="Jump to verse" class="btn btn-md green-button form-control" />
                         </form>
                     </aside>
                 </div>
