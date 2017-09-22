@@ -2,14 +2,29 @@
 {% block title %}Edit Devotion{% endblock %}
 
 {% block content %}
-    <h2>Edit Devotions</h2>
-    Verse:
-    <small>
-        {{ book.n }} {{ verse.c }}:{{ verse.v }} ({{ version }}) <br/>
-        {{ verse.t }}
-    </small>
-    <form action="" method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Update" />
-    </form>
+    <div class="container main-container">
+        <div class="row">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <div class="main-header text-center">
+                    <h1 class="margin-0">Edit Devotion</h1>
+                </div>
+
+                <div class="chosen-verse">
+                    <h2 class="text-bold">Your chosen verse:</h2>
+                    <p>{{ verse.t }}</p>
+                    <div class="text-right">
+                        <p class="verse-info text-bold">{{ book.n }} {{ verse.c }}:{{ verse.v }}</p>
+                        <p class="version-info">{{ version }}</p>
+                    </div>
+                </div>
+
+                <form method="post">
+                    {% csrf_token %}
+                    {% load crispy_forms_tags %}
+                    {{ form|crispy }}
+                    <input type="submit" value="Save Changes" class="btn btn-md green-button form-control"/>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -34,6 +34,10 @@ h2 {
     margin-bottom: 1rem;
 }
 
+textarea {
+    resize: none;
+}
+
 .row {
     margin: 0;
 }
@@ -100,7 +104,6 @@ h2 {
 
 .main-header {
     font-family: "OpenSans-Bold", sans-serif;
-    text-align: center;
     margin-bottom: 20px;
 }
 
