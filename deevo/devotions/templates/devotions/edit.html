@@ -2,28 +2,36 @@
 {% block title %}Edit Devotion{% endblock %}
 
 {% block content %}
-    <div class="container main-container">
-        <div class="row">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <div class="main-header text-center">
-                    <h1 class="margin-0">Edit Devotion</h1>
-                </div>
-
-                <div class="chosen-verse">
-                    <h2 class="text-bold">Your chosen verse:</h2>
-                    <p>{{ verse.t }}</p>
-                    <div class="text-right">
-                        <p class="verse-info text-bold">{{ book.n }} {{ verse.c }}:{{ verse.v }}</p>
-                        <p class="version-info">{{ version }}</p>
+    <div class="container">
+        <small class="text-muted">
+            <a href="{% url 'home' %}">Deevo</a> >
+            <a href="{% url 'devotions:view_devotions' %}">View Devotions</a> >
+            <a href="{% url 'devotions:view_specific' object.id %}">{{ object.title }}</a> >
+            <span class="text-bold">Edit Reflection</span>
+        </small>
+        <div class="main-container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <div class="main-header text-center">
+                        <h1 class="margin-0">Edit Devotion</h1>
                     </div>
-                </div>
 
-                <form method="post">
-                    {% csrf_token %}
-                    {% load crispy_forms_tags %}
-                    {{ form|crispy }}
-                    <input type="submit" value="Save Changes" class="btn btn-md green-button form-control"/>
-                </form>
+                    <div class="chosen-verse">
+                        <h2 class="text-bold">Your chosen verse:</h2>
+                        <p>{{ verse.t }}</p>
+                        <div class="text-right">
+                            <p class="verse-info text-bold">{{ book.n }} {{ verse.c }}:{{ verse.v }}</p>
+                            <p class="version-info">{{ version }}</p>
+                        </div>
+                    </div>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        {% load crispy_forms_tags %}
+                        {{ form|crispy }}
+                        <input type="submit" value="Save Changes" class="btn btn-md green-button form-control"/>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

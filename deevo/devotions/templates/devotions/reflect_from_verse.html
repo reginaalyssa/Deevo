@@ -7,30 +7,39 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container main-container">
-        <div class="row">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <div class="main-header text-center">
-                    <h1 class="margin-0">New Devotion</h1>
-                    <h2>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}: Write Reflection</h2>
-                </div>
-
-                <div class="chosen-verse">
-                    <h2 class="text-bold">Your chosen verse:</h2>
-                    <p>{{ verse.t }}</p>
-                    <div class="text-right">
-                        <p class="verse-info text-bold">{{ book.n }} {{ verse.c }}:{{ verse.v }}</p>
-                        <p class="version-info">{{ version }}</p>
+    <div class="container">
+        <small class="text-muted">
+            <a href="{% url 'home' %}">Deevo</a> >
+            <a href="{% url 'bible:book' %}">Read Bible</a> >
+            <a href="{% url 'bible:chapter' version.abbreviation|lower book.id verse.c%}">{{ book.n }}: Chapter {{ verse.c }}</a> >
+            <span class="text-bold">New Devotion</span> >
+            <span class="text-bold">Write Reflection</span>
+        </small>
+        <div class="main-container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <div class="main-header text-center">
+                        <h1 class="margin-0">New Devotion</h1>
+                        <h2>Write Reflection</h2>
                     </div>
+
+                    <div class="chosen-verse">
+                        <h2 class="text-bold">Your chosen verse:</h2>
+                        <p>{{ verse.t }}</p>
+                        <div class="text-right">
+                            <p class="verse-info text-bold">{{ book.n }} {{ verse.c }}:{{ verse.v }}</p>
+                            <p class="version-info">{{ version }}</p>
+                        </div>
+                    </div>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        {% load crispy_forms_tags %}
+                        {{ form|crispy }}
+
+                        <input type="submit" value="Save Devotion" class="btn btn-md green-button form-control"/>
+                    </form>
                 </div>
-
-                <form method="post">
-                    {% csrf_token %}
-                    {% load crispy_forms_tags %}
-                    {{ form|crispy }}
-
-                    <input type="submit" value="Save Devotion" class="btn btn-md green-button form-control"/>
-                </form>
             </div>
         </div>
     </div>
