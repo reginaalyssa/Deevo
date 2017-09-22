@@ -50,7 +50,6 @@ def change_verse(request, version_id, book_id, chapter_id):
             verse = form.cleaned_data['verse']
         else:
             verse = form.data['verse']
-
         return HttpResponseRedirect(reverse('bible:verse', args=(version_id, book_id, chapter_id, verse,)))
 
 
@@ -148,7 +147,9 @@ class VerseDetailView(LoginRequiredMixin, DetailView):
         context['book'] = get_object_or_404(KeyEnglish, pk=self.kwargs['book_id'])
         context['chapter'] = self.kwargs['chapter_id']
         context['version_link'] = self.kwargs['version_id']
+        context['verse_id'] = self.kwargs['verse_id']
         model = get_version_model_from_abbr(self.kwargs['version_id'])
-        context['verse_form'] = VerseForm(self.request.POST or None, initial={'verse': self.kwargs['verse_id']},
+        verse = str(self.kwargs['book_id']) + str(self.kwargs['chapter_id'].zfill(3)) + str(self.kwargs['verse_id'].zfill(3))
+        context['verse_form'] = VerseForm(self.request.POST or None, initial={'verse': verse},
                                               model=model, book_id=self.kwargs['book_id'], chapter_id=self.kwargs['chapter_id'])
         return context
