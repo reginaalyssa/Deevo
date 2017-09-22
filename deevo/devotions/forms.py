@@ -20,11 +20,6 @@ class ChooseVerseForm(forms.Form):
         required=True,
         initial=1
     )
-    # chapter = forms.ModelChoiceField(
-    #     queryset=TAsv.objects.filter(b=1).values_list('c', flat=True).distinct(),
-    #     required=True,
-    #     initial=1
-    # )
     chapter = forms.IntegerField()
     verse = forms.IntegerField()
     version = forms.ModelChoiceField(

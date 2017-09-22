@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^(?P<version_id>[a-z]+)/$', views.BookListView.as_view(), name='book'),
     url(r'^$', views.BookListView.as_view(), name='book'),
     url(r'^(?P<version_id>[a-z]+)/(?P<book_id>[0-9]+)/(?P<chapter_id>[0-9]+)/$', views.ChapterListView.as_view(), name='chapter'),
-    url(r'^(?P<version_id>[a-z]+)/(?P<book_id>[0-9]+)/(?P<chapter_id>[0-9]+)/(?P<verse_id>[0-9]+)/$', views.VerseDetailView.as_view(), name='verse')
+    url(r'^(?P<version_id>[a-z]+)/(?P<book_id>[0-9]+)/(?P<chapter_id>[0-9]+)/(?P<verse_id>[0-9]+)/$', views.VerseDetailView.as_view(), name='verse'),
+    url(r'^change_chapter/(?P<version_id>[a-z]+)/(?P<book_id>[0-9]+)/$', views.change_chapter, name='change_chapter'),
 ]

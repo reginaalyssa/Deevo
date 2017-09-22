@@ -21,8 +21,36 @@
                         <form action="{% url 'bible:change_version_chapter' book.id chapter %}" method="post">
                             {% csrf_token %}
                             {% load crispy_forms_tags %}
-                            {{ form|crispy }}
-                            <input type="submit" value="Change version" class="btn btn-md green-button form-control" />
+                            {{ version_form|crispy }}
+                            <input type="submit" value="Change version" class="btn btn-md green-button form-control"/>
+                        </form>
+
+                        {% for chapter in chapters %}
+                            {{ chapter }}
+                        {% endfor %}
+
+                        <form action="{% url 'bible:change_chapter' version_link book.id %}" method="post">
+{#                            {% csrf_token %}#}
+{#                            <div class="form-group">#}
+{#                                <label for="id_chapter" class="form-control-label requiredField">#}
+{#                                    Chapter<span class="asteriskField">*</span>#}
+{#                                </label>#}
+{#                                <div class="choices">#}
+{#                                    <select name="chapter" class="select form-control" id="id_chapter">#}
+{#                                        {% for chapter in chapters %}#}
+{#                                            <option value="{{ chapter }}"#}
+{#                                            {% if chapter == 1 %}#}
+{#                                                selected#}
+{#                                            {% endif %}#}
+{#                                            >{{ chapter }}</option>#}
+{#                                        {% endfor %}#}
+{#                                    </select>#}
+{#                                </div>#}
+{#                            </div>#}
+                            {% csrf_token %}
+                            {% load crispy_forms_tags %}
+                            {{ chapter_form|crispy }}
+                            <input type="submit" value="Jump to chapter" class="btn btn-md green-button form-control"/>
                         </form>
                     </aside>
                 </div>
@@ -33,7 +61,9 @@
                         <h3>{{ version }}</h3>
                     </div>
                     {% for verse in verse_list %}
-                        <p><a href="{% url 'bible:verse' version_link book.id chapter verse.v %}">{{ verse.v }}</a> {{ verse.t|remove_backslash }}</p>
+                        <p>
+                            <a href="{% url 'bible:verse' version_link book.id chapter verse.v %}">{{ verse.v }}</a> {{ verse.t|remove_backslash }}
+                        </p>
                     {% endfor %}
                 </div>
             </div>
