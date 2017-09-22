@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}Read Bible{% endblock %}
 
+{% block stylesheet %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bible.css' %}">
+{% endblock %}
+
 {% block content %}
     <div class="container">
         <small class="text-muted">
@@ -10,22 +15,33 @@
         <div class="main-container">
             <div class="row">
                 <div class="col-md-4">
-                    <form action="{% url 'bible:change_version_book' %}" method="post">
-                        {% csrf_token %}
-                        {% load crispy_forms_tags %}
-                        {{ form|crispy }}
-                        <input type="submit" value="Change version" class="btn btn-md green-button form-control" />
-                    </form>
+                    <aside>
+                        <form action="{% url 'bible:change_version_book' %}" method="post">
+                            {% csrf_token %}
+                            {% load crispy_forms_tags %}
+                            {{ form|crispy }}
+                            <input type="submit" value="Change version" class="btn btn-md green-button form-control" />
+                        </form>
+                    </aside>
                 </div>
                 <div class="col-md-8">
-                    <h1 class="text-bold">Old Testament</h1>
+                    <h1 class="main-header text-bold">Old Testament</h1>
                     <ul>
-                    {% for book in book_list %}
-                        <li><a href="{% url 'bible:chapter' version book.id 1 %}">{{ book.n }}</a></li>
-                        {% if book.n == 'Malachi' %}
-                            </ul><h1 class="text-bold">New Testament</h1><ul>
-                        {% endif %}
-                    {% endfor %}
+                        <div class="row">
+                            <div class="col-6">
+                                {% for book in book_list %}
+                                    <li><a href="{% url 'bible:chapter' version book.id 1 %}">{{ book.n }}</a></li>
+                                    {% if book.id == 20 or book.id == 53 %}
+                                        </div>
+                                        <div class="col-6">
+                                    {% elif book.id == 39 %}
+                                        </ul>
+                                        <h1 class="main-header text-bold">New Testament</h1>
+                                        <ul><div class="row"><div class="col-6">
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
                     </ul>
                 </div>
             </div>
