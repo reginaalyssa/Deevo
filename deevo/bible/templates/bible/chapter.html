@@ -2,18 +2,41 @@
 {% load bible_tags %}
 {% block title %}{{ book.n }} - Chapter {{ chapter }}{% endblock %}
 
-{% block content %}
-    Change version:
-    <form action="{% url 'bible:change_version_chapter' book.id chapter %}" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Submit" />
-    </form>
-    <h2>{{ book.n }}</h2>
-    <h3>Chapter {{ chapter }}</h3>
-    <h4>{{ version.version }} ({{ version.abbreviation }})</h4>
-    {% for verse in verse_list %}
-        <p><a href="{% url 'bible:verse' version_link book.id chapter verse.v %}">{{ verse.v }}</a> {{ verse.t|remove_backslash }}</p>
-    {% endfor %}
+{% block stylesheet %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bible.css' %}">
+{% endblock %}
 
+{% block content %}
+    <div class="container">
+        <small class="text-muted">
+            <a href="{% url 'home' %}">Deevo</a> >
+            <a href="{% url 'bible:book' %}">Read Bible</a> >
+            <span class="text-bold">{{ book.n }}: Chapter {{ chapter }}</span>
+        </small>
+        <div class="main-container">
+            <div class="row">
+                <div class="col-md-4">
+                    <aside>
+                        <form action="{% url 'bible:change_version_chapter' book.id chapter %}" method="post">
+                            {% csrf_token %}
+                            {% load crispy_forms_tags %}
+                            {{ form|crispy }}
+                            <input type="submit" value="Change version" class="btn btn-md green-button form-control" />
+                        </form>
+                    </aside>
+                </div>
+                <div class="col-md-8">
+                    <div class="main-header">
+                        <h1 class="margin-0 text-bold">{{ book.n }}</h1>
+                        <h2 class="read-bible-chapter">Chapter {{ chapter }}</h2>
+                        <h3>{{ version }}</h3>
+                    </div>
+                    {% for verse in verse_list %}
+                        <p><a href="{% url 'bible:verse' version_link book.id chapter verse.v %}">{{ verse.v }}</a> {{ verse.t|remove_backslash }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
