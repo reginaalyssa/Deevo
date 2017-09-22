@@ -13,3 +13,7 @@ h3 {
 .read-bible-chapter {
     margin-top: 0;
 }
+
+p {
+    font-family: "Lora-Regular", serif;
+}

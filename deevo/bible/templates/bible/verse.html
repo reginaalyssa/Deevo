@@ -3,6 +3,11 @@
 
 {% block title %}{{ book.n }} {{ chapter }}:{{ verse.v }}{% endblock %}
 
+{% block stylesheet %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bible.css' %}">
+{% endblock %}
+
 {% block content %}
     <div class="container">
         <small class="text-muted">

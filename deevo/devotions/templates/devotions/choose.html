@@ -21,7 +21,8 @@
                         <h1 class="margin-0">New Devotion</h1>
                         <h2>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}: Choose Verse</h2>
                     </div>
-
+                    <small class="text-muted">You may also opt to <a href="{% url 'bible:book' %}">Read the Bible</a> and choose a verse from there.</small>
+                    <br><br>
                     <form method="post">
                         {% csrf_token %}
                         {% load crispy_forms_tags %}

@@ -103,6 +103,10 @@ class ChapterListView(LoginRequiredMixin, ListView):
         context['book'] = get_object_or_404(KeyEnglish, pk=self.kwargs['book_id'])
         context['chapter'] = self.kwargs['chapter_id']
         context['version_link'] = self.kwargs['version_id']
+        model = get_version_model_from_id(version.id)
+        q = get_list_or_404(model, b=self.kwargs['book_id'])
+        for r in q:
+            print(r.c)
         return context
 
 class VerseDetailView(LoginRequiredMixin, DetailView):
