@@ -3,24 +3,26 @@
 {% block title %}Devotion{% endblock %}
 
 {% block content %}
-    <h2>Devotion (Choose Verse)</h2>
+    <div class="row main-container">
+        <div class="col-4 mx-auto">
+            <h1 class="main-header margin-0">New Devotion</h1>
+            <h2 class="text-center"><span class="text-bold">Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}:</span> Choose Verse</h2>
 
-    <p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}: Choose Verse</p>
-    <form action="" method="post">
-        {% csrf_token %}
-        {% load crispy_forms_tags %}
-        {{ wizard.management_form }}
-        {% if wizard.form.forms %}
-            {{ wizard.form.management_form }}
-            {% for form in wizard.form.forms %}
-                {{ form|crispy }}
-            {% endfor %}
-        {% else %}
-            {{ wizard.form|crispy }}
-        {% endif %}
-    {% if wizard.steps.prev %}
-        <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "prev step" %}</button>
-    {% endif %}
-    <input type="submit" value="Next Step"/>
-    </form>
+            <form method="post">
+                {% csrf_token %}
+                {% load crispy_forms_tags %}
+                {{ wizard.management_form }}
+                {% if wizard.form.forms %}
+                    {{ wizard.form.management_form }}
+                    {% for form in wizard.form.forms %}
+                        {{ form|crispy }}
+                    {% endfor %}
+                {% else %}
+                    {{ wizard.form|crispy }}
+                {% endif %}
+
+                <input type="submit" value="Next Step" class="btn btn-md form-control green-button"/>
+            </form>
+        </div>
+    </div>
 {% endblock %}

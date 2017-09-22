@@ -53,10 +53,11 @@ p {
     background-size: 750px auto;
 }
 
-#features h2 {
+#features h1 {
     font-family: "Museo-900";
     text-transform: uppercase;
     color: #171717;
+    font-size: 2rem;
 }
 
 #features hr {
