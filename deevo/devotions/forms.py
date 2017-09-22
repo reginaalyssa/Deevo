@@ -1,3 +1,4 @@
+from crispy_forms.helper import FormHelper
 from django import forms
 
 from bible.models import BibleVersionKey, KeyEnglish
@@ -5,6 +6,13 @@ from bible.models import BibleVersionKey, KeyEnglish
 class ReflectionForm(forms.Form):
     title = forms.CharField(max_length=100)
     reflection = forms.CharField(widget=forms.Textarea)
+
+    def __init__(self, *args, **kwargs):
+        super(ReflectionForm, self).__init__(*args, **kwargs)
+        self.fields['title'].required = False
+        self.fields['reflection'].required = False
+
+    helper = FormHelper()
 
 class ChooseVerseForm(forms.Form):
     book = forms.ModelChoiceField(
@@ -24,3 +32,5 @@ class ChooseVerseForm(forms.Form):
         required=True,
         initial=1
     )
+
+    helper = FormHelper()

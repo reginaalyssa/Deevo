@@ -3,7 +3,7 @@ from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.utils import timezone
-from django.views import generic
+from django.views.generic import DetailView, ListView, UpdateView
 
 from formtools.wizard.views import SessionWizardView
 
@@ -55,7 +55,7 @@ class NewDevotionWizardView(LoginRequiredMixin, SessionWizardView):
             context.update(new_context)
         return context
 
-class DevotionListView(LoginRequiredMixin, generic.ListView):
+class DevotionListView(LoginRequiredMixin, ListView):
     template_name = 'devotions/view.html'
     context_object_name = 'latest_devotion_list'
 
@@ -82,7 +82,7 @@ class DevotionListView(LoginRequiredMixin, generic.ListView):
         context['zipped_data'] = zip(self.get_queryset(), verse_list, book_list, version_list)
         return context
 
-class UpdateDevotionView(LoginRequiredMixin, generic.UpdateView):
+class UpdateDevotionView(LoginRequiredMixin, UpdateView):
     model = Devotion
     fields = ['title', 'reflection']
     template_name = 'devotions/edit.html'
@@ -103,7 +103,7 @@ class UpdateDevotionView(LoginRequiredMixin, generic.UpdateView):
         return context
 
 
-class DevotionDetailView(LoginRequiredMixin, generic.DetailView):
+class DevotionDetailView(LoginRequiredMixin, DetailView):
     model = Devotion
     template_name = 'devotions/devotion.html'
 
