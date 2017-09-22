@@ -3,26 +3,30 @@
 {% block title %}Devotion{% endblock %}
 
 {% block content %}
-    <div class="row main-container">
-        <div class="col-4 mx-auto">
-            <h1 class="main-header margin-0">New Devotion</h1>
-            <h2 class="text-center"><span class="text-bold">Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}:</span> Choose Verse</h2>
+    <div class="container main-container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mx-auto">
+                <div class="main-header">
+                    <h1 class="margin-0">New Devotion</h1>
+                    <h2>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}: Choose Verse</h2>
+                </div>
 
-            <form method="post">
-                {% csrf_token %}
-                {% load crispy_forms_tags %}
-                {{ wizard.management_form }}
-                {% if wizard.form.forms %}
-                    {{ wizard.form.management_form }}
-                    {% for form in wizard.form.forms %}
-                        {{ form|crispy }}
-                    {% endfor %}
-                {% else %}
-                    {{ wizard.form|crispy }}
-                {% endif %}
+                <form method="post">
+                    {% csrf_token %}
+                    {% load crispy_forms_tags %}
+                    {{ wizard.management_form }}
+                    {% if wizard.form.forms %}
+                        {{ wizard.form.management_form }}
+                        {% for form in wizard.form.forms %}
+                            {{ form|crispy }}
+                        {% endfor %}
+                    {% else %}
+                        {{ wizard.form|crispy }}
+                    {% endif %}
 
-                <input type="submit" value="Next Step" class="btn btn-md form-control green-button"/>
-            </form>
+                    <input type="submit" value="Next Step" class="btn btn-md form-control green-button"/>
+                </form>
+            </div>
         </div>
     </div>
 {% endblock %}

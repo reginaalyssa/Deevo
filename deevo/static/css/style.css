@@ -31,6 +31,7 @@ body {
 
 h2 {
     font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 .row {
@@ -70,13 +71,16 @@ h2 {
     padding: 0 1rem;
 }
 
-.green-button {
-    background-color: #39b54a;
+.green-button, .gray-button {
     font-family: "OpenSans-Bold", sans-serif;
-    color: #ffffff;
     padding: .75rem 1.75rem;
     border-radius: 1.5rem;
-    margin: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+.green-button {
+    background-color: #39b54a;
+    color: #ffffff;
 }
 
 .green-button:hover {
@@ -86,11 +90,7 @@ h2 {
 
 .gray-button {
     background-color: #dadada;
-    font-family: "OpenSans-Bold", sans-serif;
     color: #171717;
-    padding: .75rem 1.75rem;
-    border-radius: 1.5rem;
-    margin: 1rem 0;
 }
 
 .gray-button:hover {
@@ -133,11 +133,27 @@ h2 {
     font-family: "OpenSans-Bold", sans-serif;
 }
 
-#chosen-verse {
-    color: #11711e;
-    margin: 20px 0;
+.chosen-verse {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border: 1px solid #0b2e13;
+    border-radius: 0.25rem;
+    /*color: #11711e;*/
+    font-size: 0.85rem;
+    margin-bottom: 20px;
 }
 
-#chosen-verse p {
-    font-size: 0.85rem;
+.verse-info {
+    margin: 0;
+}
+
+.version-info {
+    font-size: 0.7rem;
+    margin-bottom: 0;
+}
+
+.btn-link {
+    padding: 0;
+    display: block;
+    margin-bottom: 1rem;
 }

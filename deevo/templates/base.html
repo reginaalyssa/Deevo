@@ -27,7 +27,7 @@
 {% block hero %}{% endblock %}
 
 {% block navbar %}
-    <nav class="navbar navbar-expand-md navbar-light bg-light navbar-default" id="main-navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default" id="main-navbar">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">Deevo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#deevo-navbar"
@@ -40,7 +40,7 @@
                     <ul class="navbar-nav mr-auto text-uppercase">
                         <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Dashboard</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'bible:book' %}">Read Bible</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'devotions:new' %}">Reflect on a Verse</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'devotions:new' %}">New Devotion</a></li>
                         <li class="nav-item"><a class="nav-link"
                                                 href="{% url 'devotions:view_devotions' %}">View Devotions</a></li>
                     </ul>
