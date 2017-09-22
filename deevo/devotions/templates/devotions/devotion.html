@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col-md-8 mx-auto view-devotion">
                         <div class="divider">
-                            <small class="text-muted date">
+                            <small class="text-muted dates">
                             Written on {{ devotion.pub_date }}<br/>
                             {% if devotion.edit_date != devotion.pub_date %}
                                 Last edited on {{ devotion.edit_date }}<br/>
@@ -33,7 +33,7 @@
                                 <p class="version-info">{{ version.version }} ({{ version.abbreviation }})</p>
                             </div>
                         </div>
-                        <p class="devotion-content">{{ devotion.reflection }}</p>
+                        <p class="devotion-content">{{ devotion.reflection|linebreaksbr }}</p>
                         <a href="{% url 'devotions:view_devotions' %}" class="btn btn-md gray-button">
                             <i class="fa fa-backward"></i> Back
                         </a>
