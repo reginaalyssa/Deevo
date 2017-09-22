@@ -1,0 +1,16 @@
+.verse-info {
+    font-family: "Lora-Regular", serif;
+}
+
+.verse-address {
+    font-size: 1.45rem;
+    margin: 3rem 0 0 0;
+}
+
+.version-info {
+    font-size: 0.85rem;
+}
+
+.featured {
+    margin-bottom: 1rem;
+}

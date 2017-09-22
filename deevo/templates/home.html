@@ -9,8 +9,10 @@
 {% endblock %}
 
 {% block stylesheet %}
-    {% if user.is_authenticated != True %}
-        {% load static %}
+    {% load static %}
+    {% if user.is_authenticated %}
+        <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    {% else %}
         <link rel="stylesheet" href="{% static 'css/home.css' %}">
     {% endif %}
 {% endblock %}
@@ -23,7 +25,31 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-        <p>Welcome to Deevo, {{ user.username }}.</p>
+        <div class="container">
+        <small class="text-muted">
+            <a href="{% url 'home' %}">Deevo</a> > <span class="text-bold">Dashboard</span>
+        </small>
+        <div class="main-container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <div class="main-header">
+                        <h1 class="margin-0">Welcome to Deevo, {{ user.username }}!</h1>
+                    </div>
+                    <p>
+                        Here, you can <a href="{% url 'bible:book' %}">read the Bible</a>,
+                        <a href="{% url 'devotions:new' %}">reflect on a verse</a> everyday (or whenever you feel like it),
+                        and <a href="{% url 'devotions:view_devotions' %}">re-read or edit your past devotions.</a>
+                    </p>
+                    <div class="featured">
+                        <h2 class="verse-address text-bold">Proverbs 3:6</h2>
+                        <p class="version-info">World English Bible (WEB)</p>
+                        <p class="verse-info">In all your ways acknowledge Him, and He will direct your paths.</p>
+                    </div>
+                    <a href="{% url 'devotions:reflect' 'web' 20 3 6 %}" class="btn btn-md green-button">Reflect on this verse</a>
+                </div>
+            </div>
+        </div>
+    </div>
     {% else %}
         <main class="row align-items-center full-height">
             <div class="container">
