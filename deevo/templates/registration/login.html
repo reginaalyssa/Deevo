@@ -2,15 +2,18 @@
 
 {% block title %}Log in{% endblock %}
 {% block content %}
-    <div class="row main-container">
-        <div class="col-4 mx-auto">
-            <h1 class="main-header">Log in</h1>
-            <form method="post">
-                {% csrf_token %}
-                {% load crispy_forms_tags %}
-                {{ form|crispy }}
-                <button type="submit" class="btn btn-md form-control green-button">Log in</button>
-            </form>
+    <div class="container main-container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 mx-auto">
+                <h1 class="main-header">Log in</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    {% load crispy_forms_tags %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-md form-control green-button">Log in</button>
+                </form>
+                <p>Don't have an account yet? <a href="{% url 'signup' %}">Sign up here.</a></p>
+            </div>
         </div>
     </div>
 {% endblock %}
