@@ -3,9 +3,24 @@
 {% block title %}{{ user.username }}{% endblock %}
 
 {% block content %}
-
-    <h1>Profile: {{ user.username }}</h1>
-    Username: {{ user.username }}<br />
-    Email: {{ user.email }}<br />
-    <a href="{% url 'change_password' %}">Change password.</a>
+    <div class="container">
+        <small class="text-muted">
+            <a href="{% url 'home' %}">Deevo</a> >
+            <span class="text-bold">View Profile: {{ user.username }}</span>
+        </small>
+        <div class="main-container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <div class="main-header">
+                        <h1 class="margin-0">View Profile: {{ user.username }}</h1>
+                    </div>
+                    <div class="profile-details">
+                        <span class="text-bold">Username:</span> {{ user.username }}<br>
+                        <span class="text-bold">Email Address:</span> {{ user.email }}<br>
+                    </div>
+                    <a href="{% url 'change_password' %}">Change password</a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
