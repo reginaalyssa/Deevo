@@ -15,15 +15,25 @@
     margin: 0px auto 3.5em;
 }
 
-.dates {
+#divider-pass-through {
     display: inline-block;
     position: relative;
-    background: #ffffff;
-    font-family: "Lora-Regular",Georgia,serif;
-    font-style: italic;
-    font-size: 0.85rem;
-    text-align: center;
     padding: 0 0.45em;
     top: 0.9em;
+}
+
+.dates {
+    background: #ffffff;
+    font-family: "Lora-Regular", serif;
+    font-style: italic;
+    font-size: 0.85rem;
     letter-spacing: 1px;
+}
+
+.button-group {
+    float: right;
+}
+
+.main-header .verse-info {
+    margin-top: 2rem;
 }

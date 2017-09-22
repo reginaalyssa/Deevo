@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
-{% load tag_library %}
+{% load bible_tags %}
+
 {% block title %}{{ book.n }} {{ chapter }}:{{ verse.v }}{% endblock %}
 
 {% block content %}

@@ -10,6 +10,7 @@
     <div class="container">
         {% if user_id == user.id %}
             <small class="text-muted">
+                <a href="{% url 'home' %}">Deevo</a> >
                 <a href="{% url 'devotions:view_devotions' %}">View Devotions</a>
                 > {{ devotion.title }}
             </small>
@@ -17,7 +18,7 @@
                 <div class="row">
                     <div class="col-md-8 mx-auto view-devotion">
                         <div class="divider">
-                            <small class="text-muted dates">
+                            <small class="text-muted dates text-center" id="divider-pass-through">
                             Written on {{ devotion.pub_date }}<br/>
                             {% if devotion.edit_date != devotion.pub_date %}
                                 Last edited on {{ devotion.edit_date }}<br/>
@@ -34,12 +35,14 @@
                             </div>
                         </div>
                         <p class="devotion-content">{{ devotion.reflection|linebreaksbr }}</p>
-                        <a href="{% url 'devotions:view_devotions' %}" class="btn btn-md gray-button">
-                            <i class="fa fa-backward"></i> Back
-                        </a>
-                        <a href="{% url 'devotions:edit' devotion.id %}" class="btn btn-md green-button">
-                            <i class="fa fa-edit"></i> Edit
-                        </a>
+                        <div class="button-group">
+                            <a href="{% url 'devotions:view_devotions' %}" class="btn btn-md gray-button">
+                                <i class="fa fa-backward"></i> Back
+                            </a>
+                            <a href="{% url 'devotions:edit' devotion.id %}" class="btn btn-md green-button">
+                                <i class="fa fa-edit"></i> Edit
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -44,6 +44,14 @@ textarea {
     resize: none;
 }
 
+a {
+    color: #1bdb6e;
+}
+
+a:hover {
+    color: #1bdb6e;
+}
+
 .row {
     margin: 0;
 }
@@ -110,7 +118,7 @@ textarea {
 
 .main-header {
     font-family: "OpenSans-Bold", sans-serif;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
 .margin-0 {
@@ -143,12 +151,8 @@ textarea {
 }
 
 .chosen-verse {
-    /*background-color: #f9f9f9;*/
-    /*border: 1px solid #0b2e13;*/
-    /*border-radius: 0.25rem;*/
     font-size: 0.85rem;
-    padding: 30px;
-    /*margin-bottom: 20px;*/
+    padding: 2.2rem;
 }
 
 .chosen-verse blockquote {

@@ -1,30 +1,37 @@
 {% extends 'base.html' %}
+{% load devotion_tags %}
+
 {% block title %}{{ user.username }}'s Devotions{% endblock %}
 
+{% block stylesheet %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/devotions.css' %}">
+{% endblock %}
+
 {% block content %}
-    <div class="container main-container">
-        <div class="row">
-            <div class="col-lg-6 col-md-8">
-                <h1 class="main-header">{{ user.username }}'s Devotions</h1>
-                {% if latest_devotion_list %}
-                    {% for devotion, verse, book, version in zipped_data %}
-                        <h3><a href="{% url 'devotions:view_specific' devotion.id %}">{{ devotion.title }}</a></h3>
-                        <small>
-                            {{ devotion.pub_date }} <br/>
-                            {% if devotion.edit_date %}
-                                Last edited on {{ devotion.edit_date }} <br/>
-                            {% endif %}
-                            {{ book.n }} {{ verse.c }}:{{ verse.v }} ({{ version }}) <br/>
-                            {{ verse.t }} <br/>
-                        </small>
-                        <p>{{ devotion.reflection }}</p>
-                        <a href="{% url 'devotions:view_specific' devotion.id %}">Read More</a>
-                        <a href="{% url 'devotions:edit' devotion.id %}">Edit</a>
-                    {% endfor %}
-                    <br />
-                {% else %}
-                    <p>You haven't written any devotions yet. Click <a href="{% url 'devotions:new' %}">here</a> to start reflecting.</p>
-                {% endif %}
+    <div class="container">
+        <small class="text-muted"><a href="{% url 'home' %}">Deevo</a> > View Devotions</small>
+        <div class="main-container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    {% if latest_devotion_list %}
+                        {% for devotion, verse, book, version in zipped_data %}
+                            <div class="main-header">
+                                <small class="text-muted dates">
+                                    {{ devotion.pub_date }}<br>
+                                </small>
+                                <h1 class="margin-0"><a href="{% url 'devotions:view_specific' devotion.id %}">{{ devotion.title }}</a></h1>
+                            </div>
+                            <p class="verse-info text-bold">{{ book.n }} {{ verse.c }}:{{ verse.v }}</p>
+                            <p class="version-info"> {{ version }}</p>
+                            <p class="devotion-content">{{ devotion.reflection|limit_char_140 }}</p>
+                            <hr>
+                        {% endfor %}
+                        <br />
+                    {% else %}
+                        <p>You haven't written any devotions yet. Click <a href="{% url 'devotions:new' %}">here</a> to start reflecting.</p>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
